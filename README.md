@@ -11,6 +11,12 @@ Es la web propia de **Manolo**, el padre. La de sus hijos Carlos y Sergio es otr
 | Tipografías | Bricolage Grotesque + Instrument Sans | Young Serif + Figtree |
 | Tono | empresa familiar | en primera persona: Manolo habla directamente |
 
+## Línea visual elegida: A · «Cal y mar» (16-11-2026)
+Se hicieron tres propuestas con el mismo contenido: **A · Cal y mar** (esta), **B · Cuaderno de obra** (editorial, papel, tinta negra y verde) y **C · Azul Cadaqués** (moderna, blanco y cobalto, con azulejos). Se eligió la **A**. B y C ya no forman parte de la web, pero se pueden recuperar desde la etiqueta de Git `propuestas-abc`:
+```bash
+git checkout propuestas-abc -- propuestas
+```
+
 ## Archivos
 ```
 index.html        página principal
