@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Propuestas de diseño · Web de Manolo (M.R. Salas)</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@500;700;800&family=Young+Serif&display=swap" rel="stylesheet"/>
+<style>
+  :root { --bg:#F3F2EF; --ink:#16181B; --muted:#5D6168; --line:#DEDCD6; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding:clamp(1.5rem,5vw,4rem) clamp(1rem,5vw,3rem)}
+  header{max-width:1180px;margin:0 auto 2.4rem}
+  header p.k{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+  h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:.7rem}
+  header p{color:var(--muted);max-width:44rem}
+  .grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+  a.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+  a.card:hover{transform:translateY(-4px);box-shadow:0 22px 50px -30px rgba(0,0,0,.45)}
+  .sw{height:150px;display:flex;align-items:flex-end;padding:1.1rem 1.2rem;gap:.4rem;position:relative}
+  .sw i{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.7)}
+  .sw b{position:absolute;top:1rem;left:1.2rem;font-size:2.4rem;line-height:1}
+  .a .sw{background:#F4EFE6}.a .sw b{font-family:"Young Serif",serif;font-weight:400;color:#1D3B4F}
+  .b .sw{background:#F1ECE1;background-image:linear-gradient(rgba(25,23,20,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(25,23,20,.18) 1px,transparent 1px);background-size:22px 22px}.b .sw b{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:#191714}
+  .c .sw{background:#DCE8F7}.c .sw b{font-weight:800;color:#1E4FA0}
+  .body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+  .body h2{font-size:1.25rem;font-weight:800;letter-spacing:-.01em}
+  .body p{color:var(--muted);font-size:.96rem}
+  .body ul{list-style:none;font-size:.88rem;color:var(--ink);display:grid;gap:.25rem;margin-top:.3rem}
+  .body ul li::before{content:"— ";color:var(--muted)}
+  .go{margin-top:auto;padding-top:.8rem;font-weight:800;font-size:.95rem}
+  footer{max-width:1180px;margin:2.4rem auto 0;color:var(--muted);font-size:.9rem}
+  @media (max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <p class="k">Construcciones y Reformas M.R. Salas · Manolo Rodríguez</p>
+  <h1>Tres líneas visuales para la web de Manolo</h1>
+  <p>Mismo contenido y mismas funciones (llamar, WhatsApp, formulario y páginas legales). Cambia el carácter. Las tres se diferencian de la web de los hijos (negro y naranja).</p>
+</header>
+
+<div class="grid">
+  <a class="card a" href="../index.html">
+    <div class="sw"><b>A</b><i style="background:#1D3B4F"></i><i style="background:#A9762A"></i><i style="background:#EAE2D3;border-color:#CDBFA6"></i></div>
+    <div class="body">
+      <h2>Cal y mar</h2>
+      <p>Mediterránea, cálida y cercana. Un artesano de toda la vida, con calma y oficio.</p>
+      <ul><li>Cal, azul mar profundo y ocre de arenisca</li><li>Retrato en forma de arco, textura de mampostería</li><li>Titulares con serifa (Young Serif)</li></ul>
+      <span class="go">Ver propuesta A →</span>
+    </div>
+  </a>
+  <a class="card b" href="b/index.html">
+    <div class="sw"><b>B</b><i style="background:#191714"></i><i style="background:#2E5A3C"></i><i style="background:#F1ECE1;border-color:#191714"></i></div>
+    <div class="body">
+      <h2>Cuaderno de obra</h2>
+      <p>Editorial y con personalidad, como una libreta de albañil o una ficha técnica. La más distinta.</p>
+      <ul><li>Papel, tinta negra y verde ampurdanés</li><li>Secciones numeradas, línea de tiempo desde 1975, foto en blanco y negro</li><li>Serifa grande en cursiva + detalles en mono</li></ul>
+      <span class="go">Ver propuesta B →</span>
+    </div>
+  </a>
+  <a class="card c" href="c/index.html">
+    <div class="sw"><b>C</b><i style="background:#1E4FA0"></i><i style="background:#F2C14E"></i><i style="background:#fff;border-color:#DCE8F7"></i></div>
+    <div class="body">
+      <h2>Azul Cadaqués</h2>
+      <p>Moderna, luminosa y muy directa. Pensada para que desde el móvil se llame en un toque.</p>
+      <ul><li>Blanco, azul cobalto y un toque de sol</li><li>Patrón de azulejo, teléfono enorme, iconos amables</li><li>Tipografía de palo seco (Manrope)</li></ul>
+      <span class="go">Ver propuesta C →</span>
+    </div>
+  </a>
+</div>
+
+<footer>Borrador interno, no indexable. Textos y foto provisionales: pendientes de confirmar con Manolo.</footer>
+</body>
+</html>
