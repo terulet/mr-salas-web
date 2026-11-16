@@ -1,0 +1,30 @@
+/* =====================================================================
+   M.R. SALAS · páginas legales · legal.css
+   Misma identidad que la web: cal, azul mar, ocre.
+   ===================================================================== */
+:root {
+  --cal:#F4EFE6; --cal-2:#EAE2D3; --piedra:#CDBFA6; --mar:#1D3B4F; --mar-dk:#132937;
+  --ocre:#A9762A; --ocre-lt:#D9A441; --ink:#1E2429; --muted:#5B6166;
+  --serif:"Young Serif",Georgia,serif; --sans:"Figtree",system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--cal);line-height:1.7;}
+a{color:var(--mar);}
+
+.legal-head{background:var(--mar-dk);color:var(--cal);padding:1rem clamp(1rem,5vw,3.5rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.legal-head .brand{display:flex;align-items:center;gap:.7rem;color:var(--cal);text-decoration:none;}
+.legal-head .brand strong{font-family:var(--serif);font-weight:400;font-size:1.15rem;}
+.legal-head .back{color:var(--cal);font-size:.92rem;font-weight:500;text-decoration:none;}
+.legal-head .back:hover{color:var(--ocre-lt);}
+
+.legal-wrap{max-width:780px;margin:0 auto;padding:clamp(2.5rem,7vw,4.5rem) clamp(1rem,5vw,2rem) 4rem;}
+.legal-wrap h1{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.1;margin-bottom:.6rem;color:var(--mar-dk);}
+.legal-wrap .updated{color:var(--muted);font-size:.9rem;margin-bottom:2.2rem;}
+.legal-wrap h2{font-family:var(--serif);font-weight:400;font-size:1.3rem;margin:2.2rem 0 .8rem;padding-left:.9rem;border-left:3px solid var(--ocre);color:var(--mar-dk);}
+.legal-wrap p{margin-bottom:1rem;}
+.legal-wrap ul{margin:0 0 1rem 1.2rem;}
+.legal-wrap li{margin-bottom:.4rem;}
+.legal-wrap .note{background:#fff;border:1px solid var(--piedra);border-left:3px solid var(--ocre);border-radius:10px;padding:1rem 1.2rem;margin:1.5rem 0;font-size:.95rem;}
+
+.legal-foot{background:var(--mar-dk);color:rgba(244,239,230,.75);text-align:center;padding:2rem 1rem;font-size:.85rem;}
+.legal-foot a{color:var(--ocre-lt);}
