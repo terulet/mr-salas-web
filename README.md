@@ -28,6 +28,7 @@ privacidad.html   política de privacidad (PENDIENTE de datos fiscales)
 cookies.html      política de cookies (la web no instala cookies)
 images/manolo.jpg retrato provisional
 robots.txt
+sitemap.xml
 ```
 
 ## Probar en local
@@ -41,7 +42,7 @@ y abrir http://localhost:8771
 - Sin email: no se ha inventado ninguno. Si Manolo tiene uno, añadirlo en contacto y en las páginas legales.
 - El formulario **no envía nada a ningún servidor**: prepara un mensaje de WhatsApp con nombre, tipo de trabajo, municipio y detalles, y el cliente lo manda.
 
-## Pendiente antes de publicar
+## Pendiente (ya está publicada, falta completar)
 1. **Confirmar el nombre comercial.** Se ha usado «Construcciones y Reformas M.R. Salas» porque es el nombre de la carpeta del cliente. Si no es así, cambiar «M.R. Salas» en todos los archivos.
 2. **Datos fiscales** en `aviso-legal.html` y `privacidad.html` (titular, NIF/CIF, domicilio, email para ejercer derechos). Están entre `[corchetes]` y marcados con `PENDIENTE COMPLETAR ANTES DE PUBLICAR`. Que lo revise su gestor.
 3. **Foto de Manolo.** `images/manolo.jpg` es un recorte de la foto del equipo frente a la bahía de Roses (la misma de la web de los hijos), así que lleva el polo con el logo de Hermanos Rodríguez y tiene poca resolución. Sustituir por una foto suya (vertical, 4:5, mínimo 900×1125) manteniendo el nombre.
@@ -53,9 +54,11 @@ y abrir http://localhost:8771
    - Servicios: reformas, baños y cocinas, albañilería y obra menor, fachadas, tejados y goteras, piedra y exteriores.
    - Que manda fotos del avance de obra a clientes con segunda residencia.
 5. **Fotos de obras suyas.** No hay galería porque no tenemos fotos reales de sus trabajos y no queremos usar imágenes genéricas como si fueran suyas. Cuando las haya, se añade una sección de trabajos.
-6. **Dominio.** Cuando lo haya, añadir `canonical`, `og:url` y una URL absoluta para `og:image` (marcado `DOMINIO PENDIENTE` en `index.html`), crear `CNAME` y `sitemap.xml`.
+6. **Dominio.** Ahora usa la URL de GitHub Pages. Cuando haya dominio propio, ver «Publicada» más abajo (marcado `DOMINIO PENDIENTE` en `index.html`).
 
-## Publicar en GitHub Pages
-1. Crear el repositorio y subir estos archivos.
-2. Settings → Pages → Branch `main` / raíz → Save.
-3. Si hay dominio propio, añadir el archivo `CNAME` y configurar los DNS.
+## Publicada (16-11-2026)
+- Web: **https://terulet.github.io/mr-salas-web/**
+- Repositorio: https://github.com/terulet/mr-salas-web (público), GitHub Pages desde la rama `master`, raíz.
+- Se publicó **a propósito antes de tener los datos**: las páginas legales aún muestran los `[corchetes]` y la foto es la provisional. Completar la lista de abajo cuanto antes.
+- Para actualizarla: editar, `git commit` y `git push`; Pages tarda un minuto en desplegar.
+- Si hay dominio propio: crear `CNAME`, configurar los DNS y cambiar la URL en `index.html` (canonical, og:url, og:image), `robots.txt` y `sitemap.xml`.
