@@ -64,23 +64,46 @@
     window.open("https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
   });
 
-  /* ---------- Cuatro fotografías de la obra ---------- */
+  /* ---------- Túnel del tiempo de la obra ---------- */
   var story = document.getElementById("obra-recorrido");
   var scene = document.getElementById("obra-escena");
   var caption = document.getElementById("stage-caption");
   var stageButtons = Array.from(story.querySelectorAll("[data-stage]"));
-  var stageFrames = Array.from(story.querySelectorAll(".story__frame"));
-  var preview = story.closest("#mr-salas-photo-preview");
+  var stageSteps = Array.from(story.querySelectorAll(".story__step"));
+  var stageFrames = Array.from(scene.querySelectorAll(".story__frame"));
+  var stageMarkers = Array.from(scene.querySelectorAll(".story__track i"));
+  var mobile = window.matchMedia("(max-width: 740px)");
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   var activeStage = 0;
-  var scrollStage = 0;
   var pending = false;
 
-  function showPhoto(index) {
+  function readingLine() {
+    var top = parseFloat(window.getComputedStyle(scene).top) || 0;
+    if (mobile.matches) {
+      var gap = parseFloat(window.getComputedStyle(story).rowGap) || 0;
+      top += scene.offsetHeight + gap;
+    }
+    return top;
+  }
+
+  function stagePosition(line) {
+    var tops = stageSteps.map(function (step) { return step.getBoundingClientRect().top; });
+    for (var i = 0; i < tops.length - 1; i++) {
+      if (line < tops[i + 1]) {
+        return i + Math.max(0, (line - tops[i]) / Math.max(tops[i + 1] - tops[i], 1));
+      }
+    }
+    return tops.length - 1;
+  }
+
+  function showStage(index) {
     if (activeStage === index) return;
     activeStage = index;
     stageButtons.forEach(function (button, i) {
       button.setAttribute("aria-pressed", String(index === i));
+      stageSteps[i].classList.toggle("is-current", index === i);
       stageFrames[i].classList.toggle("is-current", index === i);
+      stageMarkers[i].classList.toggle("is-marked", i <= index);
     });
     var selected = stageButtons[index];
     var number = selected.firstElementChild.textContent;
@@ -88,19 +111,23 @@
     caption.textContent = number + " / 04 · " + title;
   }
 
-  function scrollProgress() {
-    if (preview) return story.scrollTop / Math.max(story.scrollHeight - story.clientHeight, 1);
-    var stickyTop = parseFloat(window.getComputedStyle(scene).top) || 0;
-    return (stickyTop - story.getBoundingClientRect().top) / Math.max(story.offsetHeight - scene.offsetHeight, 1);
-  }
-
   function followScroll() {
     pending = false;
-    var progress = Math.max(0, Math.min(1, scrollProgress()));
-    var index = Math.min(stageFrames.length - 1, Math.floor(progress * stageFrames.length));
-    if (scrollStage === index) return;
-    scrollStage = index;
-    showPhoto(index);
+    var position = stagePosition(readingLine());
+    var index = Math.floor(position);
+    var fraction = position - index;
+    // Hold each photo still, then reveal the next one by moving the survey line.
+    var revealStart = .64;
+    var reveal = reducedMotion.matches ? 0 : Math.max(0, (fraction - revealStart) / (1 - revealStart));
+
+    showStage(index);
+    stageFrames.forEach(function (frame, i) {
+      frame.classList.toggle("is-next", reveal > 0 && i === index + 1);
+    });
+    var progress = reducedMotion.matches ? index : position;
+    scene.style.setProperty("--story-progress", progress / (stageFrames.length - 1));
+    scene.style.setProperty("--story-reveal", reveal * 100 + "%");
+    scene.classList.toggle("is-revealing", reveal > 0);
   }
 
   function schedule() {
@@ -109,10 +136,20 @@
     window.requestAnimationFrame(followScroll);
   }
 
+  function sizeScene() {
+    story.style.setProperty("--story-scene-height", scene.offsetHeight + "px");
+    schedule();
+  }
+
   stageButtons.forEach(function (button, index) {
-    button.addEventListener("click", function () { showPhoto(index); });
+    button.addEventListener("click", function () {
+      var difference = stageSteps[index].getBoundingClientRect().top - readingLine();
+      window.scrollBy({ top: difference + 2, behavior: reducedMotion.matches ? "auto" : "smooth" });
+    });
   });
-  (preview ? story : window).addEventListener("scroll", schedule, { passive: true });
-  window.addEventListener("resize", schedule);
-  schedule();
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", sizeScene);
+  reducedMotion.addEventListener("change", schedule);
+  if (window.ResizeObserver) new window.ResizeObserver(sizeScene).observe(scene);
+  sizeScene();
 })();

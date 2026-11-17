@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet"/>
 
-<link rel="stylesheet" href="style.css?v=20261117-movil-compacto"/>
+<link rel="stylesheet" href="style.css?v=20261117-tunel"/>
 
 <!-- ============ JSON-LD · LocalBusiness ============ -->
 <script type="application/ld+json">
@@ -95,11 +95,11 @@
   <section class="story" id="como" aria-labelledby="story-heading">
     <div class="container">
       <div class="story__intro">
-        <p class="eyebrow">Cómo trabajo</p>
+        <p class="eyebrow">Túnel del tiempo de la obra</p>
         <h2 id="story-heading">De la primera marca al último remate.</h2>
         <p>Cuatro visitas a la misma obra, desde las primeras marcas en el terreno hasta el patio terminado.</p>
       </div>
-      <p class="story__instruction">Desliza para ver las fotos de la obra o elige una etapa.</p>
+      <p class="story__instruction">Baja para avanzar por la obra o elige una etapa.</p>
       <div class="story__layout" id="obra-recorrido">
         <figure class="story__figure" id="obra-escena">
           <div class="story__frames" aria-hidden="true">
@@ -107,6 +107,10 @@
             <div class="story__frame"></div>
             <div class="story__frame"></div>
             <div class="story__frame"></div>
+            <span class="story__survey-line"></span>
+          </div>
+          <div class="story__track" aria-hidden="true">
+            <i class="is-marked"></i><i></i><i></i><i></i>
           </div>
           <figcaption>
             <span id="stage-caption">01 / 04 · Terreno y replanteo</span>
@@ -114,7 +118,7 @@
           </figcaption>
         </figure>
         <ol class="story__steps">
-          <li class="story__step">
+          <li class="story__step is-current">
             <h3><button type="button" data-stage="0" aria-pressed="true"><span>01</span> Terreno y replanteo</button></h3>
             <p>Marcamos las medidas y las alturas antes de empezar la cimentación.</p>
           </li>
@@ -230,6 +234,6 @@
     </nav>
   </div>
 </footer>
-<script src="script.js?v=20261117" defer></script>
+<script src="script.js?v=20261117-tunel" defer></script>
 </body>
 </html>
