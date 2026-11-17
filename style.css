@@ -61,7 +61,8 @@ button { color: inherit; }
   justify-items: center;
   gap: clamp(.42rem, 1.1svh, .72rem);
 }
-@media (min-width: 18rem) and (min-height: 32rem) {
+@media (min-width: 18rem) and (min-height: 32rem),
+       (min-width: 18rem) and (max-width: 740px) and (min-height: 28rem) {
   .hero {
     /* Reserve space for the text and button, then fit the portrait in what remains. */
     block-size: min(calc(100svh - var(--nav-height) - 1px), 56rem);
@@ -182,7 +183,7 @@ button { color: inherit; }
   .hero h1 { font-size: clamp(2.6rem, 4vw, 3.15rem); }
   .hero h1 br { display: none; }
 }
-@media (min-width: 18rem) and (max-width: 740px) and (min-height: 32rem) {
+@media (min-width: 18rem) and (max-width: 740px) and (min-height: 28rem) {
   .hero {
     --portrait-width: calc(100vw - clamp(1.75rem, 6vw, 5rem));
     block-size: min(
