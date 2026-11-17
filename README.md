@@ -21,12 +21,15 @@ git checkout propuestas-abc -- propuestas
 ```
 index.html        página principal
 style.css         estilos
-script.js         menú móvil, apariciones, formulario → WhatsApp
+script.js         menú móvil, recorrido fotográfico, formulario → WhatsApp
 legal.css         estilos de las páginas legales
 aviso-legal.html  aviso legal (PENDIENTE de datos fiscales)
 privacidad.html   política de privacidad (PENDIENTE de datos fiscales)
 cookies.html      política de cookies (la web no instala cookies)
-images/manolo.jpg retrato provisional
+images/retrato-mediterraneo.webp  retrato de portada y recorte en la sección de Manolo
+images/manolo-real.webp          foto original usada al compartir la web
+images/diario-etapas.webp        recorrido ilustrativo de la obra
+images/estructura.webp           foto ilustrativa de la fase de estructura
 robots.txt
 sitemap.xml
 ```
@@ -45,7 +48,7 @@ y abrir http://localhost:8771
 ## Pendiente (ya está publicada, falta completar)
 1. **Confirmar el nombre comercial.** Se ha usado «Construcciones y Reformas M.R. Salas» porque es el nombre de la carpeta del cliente. Si no es así, cambiar «M.R. Salas» en todos los archivos.
 2. **Datos fiscales** en `aviso-legal.html` y `privacidad.html` (titular, NIF/CIF, domicilio, email para ejercer derechos). Están entre `[corchetes]` y marcados con `PENDIENTE COMPLETAR ANTES DE PUBLICAR`. Que lo revise su gestor.
-3. **Foto de Manolo.** `images/manolo.jpg` es un recorte de la foto del equipo frente a la bahía de Roses (la misma de la web de los hijos), así que lleva el polo con el logo de Hermanos Rodríguez y tiene poca resolución. Sustituir por una foto suya (vertical, 4:5, mínimo 900×1125) manteniendo el nombre.
+3. **Retrato y recorrido.** La portada usa la composición mediterránea elegida a partir de la foto que aportó Manolo. Las cuatro fases de «Cómo trabajo» son ilustrativas. Cuando se disponga de fotos autorizadas de una obra real, se pueden incorporar como caso documentado.
 4. **Textos a confirmar con Manolo** (redactados como propuesta, no son datos verificados):
    - «Empecé a mediados de los setenta» y «+50 años de oficio» (sale de la web de los hijos: 1975).
    - «0 € por venir a verlo» / presupuesto sin compromiso.
@@ -59,6 +62,6 @@ y abrir http://localhost:8771
 ## Publicada (16-11-2026)
 - Web: **https://terulet.github.io/mr-salas-web/**
 - Repositorio: https://github.com/terulet/mr-salas-web (público), GitHub Pages desde la rama `master`, raíz.
-- Se publicó **a propósito antes de tener los datos**: las páginas legales aún muestran los `[corchetes]` y la foto es la provisional. Completar la lista de abajo cuanto antes.
+- Se publicó **a propósito antes de tener los datos**: las páginas legales aún muestran los `[corchetes]`. Completar la lista de abajo cuanto antes.
 - Para actualizarla: editar, `git commit` y `git push`; Pages tarda un minuto en desplegar.
 - Si hay dominio propio: crear `CNAME`, configurar los DNS y cambiar la URL en `index.html` (canonical, og:url, og:image), `robots.txt` y `sitemap.xml`.
