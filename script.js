@@ -145,16 +145,24 @@
   function updateMessage() {
     const municipality = town.value.trim();
     const place = municipality ? " en " + municipality : "";
-    const text = "Hola Manolo. Quería consultarte sobre " + job.value + place + ".";
+    const text = "Hola Manolo. Quería consultarte sobre " + job.selectedOptions[0].dataset.message + place + ".";
     preview.textContent = text;
     destination.searchParams.set("text", text);
     whatsapp.href = destination.href;
   }
 
-  toggle.addEventListener("click", () => {
-    draft.hidden = !draft.hidden;
-    toggle.setAttribute("aria-expanded", String(!draft.hidden));
-    if (!draft.hidden) updateMessage();
+  function setDraft(open) {
+    draft.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    if (open) updateMessage();
+  }
+
+  toggle.addEventListener("click", () => setDraft(draft.hidden));
+  document.querySelectorAll("[data-service]").forEach(link => {
+    link.addEventListener("click", () => {
+      job.value = link.dataset.service;
+      setDraft(true);
+    });
   });
   job.addEventListener("change", updateMessage);
   town.addEventListener("input", updateMessage);

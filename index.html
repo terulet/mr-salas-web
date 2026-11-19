@@ -19,6 +19,11 @@
 <meta property="og:description" content="Más de 50 años de oficio en Roses y el Alt Empordà. Trato directo con Manolo, de la primera visita al último detalle."/>
 <meta property="og:url" content="https://terulet.github.io/mr-salas-web/"/>
 <meta property="og:image" content="https://terulet.github.io/mr-salas-web/images/manolo-real.webp"/>
+<meta property="og:image:type" content="image/webp"/>
+<meta property="og:image:width" content="830"/>
+<meta property="og:image:height" content="1107"/>
+<meta property="og:image:alt" content="Manolo Rodríguez con su chaleco de trabajo"/>
+<meta name="twitter:card" content="summary"/>
 <meta property="og:locale" content="es_ES"/>
 <meta property="og:site_name" content="Construcciones y Reformas M.R. Salas"/>
 
@@ -30,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet"/>
 
-<link rel="stylesheet" href="style.css?v=20261119-contacto"/>
+<link rel="stylesheet" href="style.css?v=20261119-remates"/>
 
 <!-- ============ JSON-LD · LocalBusiness ============ -->
 <script type="application/ld+json">
@@ -40,7 +45,8 @@
   "name": "Construcciones y Reformas M.R. Salas",
   "description": "Albañilería, reformas y rehabilitación de viviendas en Roses y el Alt Empordà, con Manolo Rodríguez al frente: más de 50 años de oficio.",
   "telephone": "+34615959391",
-  "image": "images/manolo-real.webp",
+  "url": "https://terulet.github.io/mr-salas-web/",
+  "image": "https://terulet.github.io/mr-salas-web/images/manolo-real.webp",
   "areaServed": [
     { "@type": "City", "name": "Roses" },
     { "@type": "City", "name": "Empuriabrava" },
@@ -226,12 +232,12 @@
     <p class="eyebrow">Trabajos</p>
     <h2>De un arreglo a una reforma entera.</h2>
     <div class="services__grid">
-      <div><h3>Reformas de vivienda</h3><p>Actualizar una casa, un piso o una segunda residencia.</p></div>
-      <div><h3>Baños y cocinas</h3><p>Renovar los espacios que más usas cada día.</p></div>
-      <div><h3>Albañilería y obra menor</h3><p>Reparaciones y trabajos pequeños que merecen hacerse bien.</p></div>
-      <div><h3>Fachadas y rehabilitación</h3><p>Reparar muros, revocos y acabados exteriores.</p></div>
-      <div><h3>Tejados y goteras</h3><p>Revisar cubiertas y buscar el origen de las filtraciones.</p></div>
-      <div><h3>Piedra y exteriores</h3><p>Muros, pavimentos y remates de piedra.</p></div>
+      <div><h3><a href="#contacto" data-service="reforma">Reformas de vivienda <span aria-hidden="true">→</span></a></h3><p>Actualizar una casa, un piso o una segunda residencia.</p></div>
+      <div><h3><a href="#contacto" data-service="bano-cocina">Baños y cocinas <span aria-hidden="true">→</span></a></h3><p>Renovar los espacios que más usas cada día.</p></div>
+      <div><h3><a href="#contacto" data-service="reparacion">Albañilería y obra menor <span aria-hidden="true">→</span></a></h3><p>Reparaciones y trabajos pequeños que merecen hacerse bien.</p></div>
+      <div><h3><a href="#contacto" data-service="fachada">Fachadas y rehabilitación <span aria-hidden="true">→</span></a></h3><p>Reparar muros, revocos y acabados exteriores.</p></div>
+      <div><h3><a href="#contacto" data-service="tejado">Tejados y goteras <span aria-hidden="true">→</span></a></h3><p>Revisar cubiertas y buscar el origen de las filtraciones.</p></div>
+      <div><h3><a href="#contacto" data-service="exterior">Piedra y exteriores <span aria-hidden="true">→</span></a></h3><p>Muros, pavimentos y remates de piedra.</p></div>
     </div>
   </section>
 
@@ -274,13 +280,13 @@
           <div class="draft-fields">
             <label>Tipo de trabajo
               <select data-job>
-                <option value="una reforma de vivienda">Reforma de vivienda</option>
-                <option value="reformar el baño o la cocina">Baño o cocina</option>
-                <option value="una reparación de albañilería">Albañilería o reparación</option>
-                <option value="rehabilitar una fachada">Fachada</option>
-                <option value="un problema de tejado o goteras">Tejado o goteras</option>
-                <option value="un trabajo de piedra o exterior">Piedra o exterior</option>
-                <option value="una obra que todavía estoy valorando">Aún lo estoy valorando</option>
+                <option value="reforma" data-message="una reforma de vivienda">Reforma de vivienda</option>
+                <option value="bano-cocina" data-message="reformar el baño o la cocina">Baño o cocina</option>
+                <option value="reparacion" data-message="una reparación de albañilería">Albañilería o reparación</option>
+                <option value="fachada" data-message="rehabilitar una fachada">Fachada</option>
+                <option value="tejado" data-message="un problema de tejado o goteras">Tejado o goteras</option>
+                <option value="exterior" data-message="un trabajo de piedra o exterior">Piedra o exterior</option>
+                <option value="orientacion" data-message="una obra que todavía estoy valorando">Aún lo estoy valorando</option>
               </select>
             </label>
             <label>Municipio <input type="text" data-town placeholder="Roses, Empuriabrava…" maxlength="70"></label>
@@ -304,6 +310,6 @@
     </nav>
   </div>
 </footer>
-<script src="script.js?v=20261119-contacto" defer></script>
+<script src="script.js?v=20261119-remates" defer></script>
 </body>
 </html>
