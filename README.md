@@ -40,9 +40,9 @@ python3 -m http.server 8771
 y abrir http://localhost:8771
 
 ## Contacto configurado
-- Teléfono y WhatsApp de Manolo: **615 959 391** (`WHATSAPP_NUMERO` en `script.js`).
+- Teléfono y WhatsApp de Manolo: **615 959 391** (en los enlaces de `index.html`).
 - Sin email: no se ha inventado ninguno. Si Manolo tiene uno, añadirlo en contacto y en las páginas legales.
-- El formulario **no envía nada a ningún servidor**: prepara un mensaje de WhatsApp con nombre, tipo de trabajo, municipio y detalles, y el cliente lo manda.
+- El contacto ofrece una llamada directa y un mensaje de WhatsApp preparado con el tipo de trabajo y, si se indica, el municipio. El visitante puede editar el mensaje y añadir fotos en WhatsApp.
 
 ## Pendiente (ya está publicada, falta completar)
 1. **Confirmar el nombre comercial.** Se ha usado «Construcciones y Reformas M.R. Salas» porque es el nombre de la carpeta del cliente. Si no es así, cambiar «M.R. Salas» en todos los archivos.

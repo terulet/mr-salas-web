@@ -1,20 +1,9 @@
 /* =====================================================================
    M.R. SALAS · Manolo Rodríguez · script.js
-   Menú móvil, cabecera al hacer scroll, apariciones suaves y
-   formulario que prepara el mensaje de WhatsApp.
+   Menú móvil, recorrido fotográfico y contacto por WhatsApp.
    ===================================================================== */
 (function () {
   "use strict";
-
-  // Número de WhatsApp de Manolo (formato internacional, sin + ni espacios)
-  var WHATSAPP_NUMERO = "34615959391";
-
-  // Mensaje inicial de los botones de WhatsApp
-  var WA_SALUDO = "Hola Manolo, te escribo desde la web. Quería consultarte una obra.";
-
-  /* ---------- Botones de WhatsApp con saludo ---------- */
-  var waUrl = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WA_SALUDO);
-  document.querySelectorAll(".js-wa").forEach(function (a) { a.href = waUrl; });
 
   /* ---------- Cabecera ---------- */
   var nav = document.getElementById("nav");
@@ -34,35 +23,6 @@
   menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
 
-  /* ---------- Formulario → WhatsApp ---------- */
-  var form = document.getElementById("form");
-  var err = document.getElementById("form-error");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var nombre = form.elements.namedItem("nombre").value.trim();
-    var tipo = form.elements.namedItem("tipo").value;
-    var lugar = form.elements.namedItem("lugar").value.trim();
-    var msg = form.elements.namedItem("mensaje").value.trim();
-    var priv = document.getElementById("f-priv").checked;
-
-    [form.elements.namedItem("nombre"), form.elements.namedItem("tipo"), form.elements.namedItem("lugar")].forEach(function (f) {
-      f.classList.toggle("is-invalid", !f.value.trim());
-    });
-
-    if (!nombre || !tipo || !lugar || !priv) {
-      err.hidden = false;
-      return;
-    }
-    err.hidden = true;
-
-    var texto =
-      "Hola Manolo, soy " + nombre + ". Te escribo desde la web.\n" +
-      "• Trabajo: " + tipo + "\n" +
-      "• Municipio: " + lugar +
-      (msg ? "\n• Detalles: " + msg : "");
-
-    window.open("https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
-  });
 })();
 
 /* ---------- Recorrido de obra y reforma ---------- */
@@ -169,4 +129,35 @@
       }
     });
   }
+})();
+
+/* ---------- Contacto por WhatsApp ---------- */
+(() => {
+  const contact = document.getElementById("contacto");
+  const toggle = contact.querySelector("[data-compose]");
+  const draft = document.getElementById("salas-draft");
+  const job = draft.querySelector("[data-job]");
+  const town = draft.querySelector("[data-town]");
+  const preview = draft.querySelector("[data-message]");
+  const whatsapp = draft.querySelector("[data-whatsapp]");
+  const destination = new URL(whatsapp.href);
+
+  function updateMessage() {
+    const municipality = town.value.trim();
+    const place = municipality ? " en " + municipality : "";
+    const text = "Hola Manolo. Quería consultarte sobre " + job.value + place + ".";
+    preview.textContent = text;
+    destination.searchParams.set("text", text);
+    whatsapp.href = destination.href;
+  }
+
+  toggle.addEventListener("click", () => {
+    draft.hidden = !draft.hidden;
+    toggle.setAttribute("aria-expanded", String(!draft.hidden));
+    if (!draft.hidden) updateMessage();
+  });
+  job.addEventListener("change", updateMessage);
+  town.addEventListener("input", updateMessage);
+  updateMessage();
+  toggle.hidden = false;
 })();
