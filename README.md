@@ -28,8 +28,7 @@ privacidad.html   política de privacidad (PENDIENTE de datos fiscales)
 cookies.html      política de cookies (la web no instala cookies)
 images/retrato-mediterraneo.webp  retrato de portada y recorte en la sección de Manolo
 images/manolo-real.webp          foto original usada al compartir la web
-images/diario-etapas.webp        recorrido ilustrativo de la obra
-images/estructura.webp           foto ilustrativa de la fase de estructura
+images/reformas/                 comparativas ilustrativas y detalle de fachada
 robots.txt
 sitemap.xml
 ```
@@ -48,7 +47,7 @@ y abrir http://localhost:8771
 ## Pendiente (ya está publicada, falta completar)
 1. **Confirmar el nombre comercial.** Se ha usado «Construcciones y Reformas M.R. Salas» porque es el nombre de la carpeta del cliente. Si no es así, cambiar «M.R. Salas» en todos los archivos.
 2. **Datos fiscales** en `aviso-legal.html` y `privacidad.html` (titular, NIF/CIF, domicilio, email para ejercer derechos). Están entre `[corchetes]` y marcados con `PENDIENTE COMPLETAR ANTES DE PUBLICAR`. Que lo revise su gestor.
-3. **Retrato y recorrido.** La portada usa la composición mediterránea elegida a partir de la foto que aportó Manolo. Las cuatro fases de «Cómo trabajo» son ilustrativas. Cuando se disponga de fotos autorizadas de una obra real, se pueden incorporar como caso documentado.
+3. **Retrato y recorrido.** La portada usa la composición mediterránea elegida a partir de la foto que aportó Manolo. Las comparativas de «Reformas» y el detalle interactivo de fachada son ilustrativos. Cuando se disponga de fotos autorizadas de una obra real, se pueden incorporar como caso documentado.
 4. **Textos a confirmar con Manolo** (redactados como propuesta, no son datos verificados):
    - «Empecé a mediados de los setenta» y «+50 años de oficio» (sale de la web de los hijos: 1975).
    - «0 € por venir a verlo» / presupuesto sin compromiso.

@@ -63,93 +63,110 @@
 
     window.open("https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
   });
+})();
 
-  /* ---------- Túnel del tiempo de la obra ---------- */
-  var story = document.getElementById("obra-recorrido");
-  var scene = document.getElementById("obra-escena");
-  var caption = document.getElementById("stage-caption");
-  var stageButtons = Array.from(story.querySelectorAll("[data-stage]"));
-  var stageSteps = Array.from(story.querySelectorAll(".story__step"));
-  var stageFrames = Array.from(scene.querySelectorAll(".story__frame"));
-  var stageMarkers = Array.from(scene.querySelectorAll(".story__track i"));
-  var mobile = window.matchMedia("(max-width: 740px)");
-  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var activeStage = 0;
-  var pending = false;
+/* ---------- Recorrido de obra y reforma ---------- */
+(() => {
+  const history = document.querySelector(".reform-history");
+  const nav = history.querySelector(".era-nav");
+  const links = [...nav.querySelectorAll("a")];
+  const header = document.getElementById("nav");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  const chapters = [...history.querySelectorAll(".chapter")].map(section => ({
+    section,
+    pin: section.querySelector(".chapter__pin"),
+    caption: section.querySelector(".caption"),
+    buttons: [...section.querySelectorAll("[data-select]")],
+    images: [...section.querySelectorAll("[data-photo]")],
+    captions: { before: section.dataset.before, after: section.dataset.after },
+    lastScrollStage: null
+  }));
+  let pending = false;
 
-  function readingLine() {
-    var top = parseFloat(window.getComputedStyle(scene).top) || 0;
-    if (mobile.matches) {
-      var gap = parseFloat(window.getComputedStyle(story).rowGap) || 0;
-      top += scene.offsetHeight + gap;
+  function show(chapter, stage) {
+    if (chapter.section.dataset.stage === stage) return;
+    chapter.section.dataset.stage = stage;
+    chapter.caption.textContent = chapter.captions[stage];
+    for (const button of chapter.buttons) {
+      button.setAttribute("aria-pressed", String(button.dataset.select === stage));
     }
-    return top;
+    for (const img of chapter.images) {
+      img.setAttribute("aria-hidden", String(img.dataset.photo !== stage));
+    }
   }
 
-  function stagePosition(line) {
-    var tops = stageSteps.map(function (step) { return step.getBoundingClientRect().top; });
-    for (var i = 0; i < tops.length - 1; i++) {
-      if (line < tops[i + 1]) {
-        return i + Math.max(0, (line - tops[i]) / Math.max(tops[i + 1] - tops[i], 1));
+  function trackScroll() {
+    pending = false;
+    const line = header.offsetHeight + nav.offsetHeight;
+    let active = chapters[0];
+    for (const chapter of chapters) {
+      const top = chapter.section.getBoundingClientRect().top;
+      if (top <= line + nav.offsetHeight) active = chapter;
+      if (reduced.matches) continue;
+      const travel = Math.max(1, chapter.section.offsetHeight - chapter.pin.offsetHeight);
+      const stage = line - top > travel * .42 ? "after" : "before";
+      if (stage !== chapter.lastScrollStage) {
+        chapter.lastScrollStage = stage;
+        show(chapter, stage);
       }
     }
-    return tops.length - 1;
+    for (const link of links) {
+      if (link.hash === "#" + active.section.id) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    }
   }
 
-  function showStage(index) {
-    if (activeStage === index) return;
-    activeStage = index;
-    stageButtons.forEach(function (button, i) {
-      button.setAttribute("aria-pressed", String(index === i));
-      stageSteps[i].classList.toggle("is-current", index === i);
-      stageFrames[i].classList.toggle("is-current", index === i);
-      stageMarkers[i].classList.toggle("is-marked", i <= index);
-    });
-    var selected = stageButtons[index];
-    var number = selected.firstElementChild.textContent;
-    var title = selected.textContent.trim().slice(number.length).trim();
-    caption.textContent = number + " / 04 · " + title;
-  }
-
-  function followScroll() {
-    pending = false;
-    var position = stagePosition(readingLine());
-    var index = Math.floor(position);
-    var fraction = position - index;
-    // Hold each photo still, then reveal the next one by moving the survey line.
-    var revealStart = .64;
-    var reveal = reducedMotion.matches ? 0 : Math.max(0, (fraction - revealStart) / (1 - revealStart));
-
-    showStage(index);
-    stageFrames.forEach(function (frame, i) {
-      frame.classList.toggle("is-next", reveal > 0 && i === index + 1);
-    });
-    var progress = reducedMotion.matches ? index : position;
-    scene.style.setProperty("--story-progress", progress / (stageFrames.length - 1));
-    scene.style.setProperty("--story-reveal", reveal * 100 + "%");
-    scene.classList.toggle("is-revealing", reveal > 0);
-  }
-
-  function schedule() {
+  function scheduleTracking() {
     if (pending) return;
     pending = true;
-    window.requestAnimationFrame(followScroll);
+    requestAnimationFrame(trackScroll);
   }
 
-  function sizeScene() {
-    story.style.setProperty("--story-scene-height", scene.offsetHeight + "px");
-    schedule();
+  for (const chapter of chapters) {
+    for (const button of chapter.buttons) {
+      button.addEventListener("click", () => show(chapter, button.dataset.select));
+    }
   }
-
-  stageButtons.forEach(function (button, index) {
-    button.addEventListener("click", function () {
-      var difference = stageSteps[index].getBoundingClientRect().top - readingLine();
-      window.scrollBy({ top: difference + 2, behavior: reducedMotion.matches ? "auto" : "smooth" });
-    });
+  window.addEventListener("scroll", scheduleTracking, { passive: true });
+  window.addEventListener("resize", scheduleTracking);
+  reduced.addEventListener("change", () => {
+    for (const chapter of chapters) chapter.lastScrollStage = null;
+    scheduleTracking();
   });
-  window.addEventListener("scroll", schedule, { passive: true });
-  window.addEventListener("resize", sizeScene);
-  reducedMotion.addEventListener("change", schedule);
-  if (window.ResizeObserver) new window.ResizeObserver(sizeScene).observe(scene);
-  sizeScene();
+  trackScroll();
+})();
+
+(() => {
+  const section = document.getElementById("lo-que-no-se-ve");
+  const details = {
+    window: {
+      heading: "El encuentro con la ventana",
+      copy: "Revisamos la junta entre el marco y la pared y el vierteaguas de debajo. Ese remate ayuda a que la lluvia caiga hacia fuera y se separe de la fachada."
+    },
+    base: {
+      heading: "El zócalo de la fachada",
+      copy: "La parte baja recibe salpicaduras y está cerca del terreno. Miramos de dónde viene la humedad antes de decidir cómo reparar y rematar el muro."
+    },
+    drain: {
+      heading: "La salida del agua",
+      copy: "Comprobamos hacia dónde corre la lluvia desde la terraza. En este ejemplo, la pendiente lleva el agua hasta una rejilla a ras de suelo."
+    }
+  };
+  const controls = [...section.querySelectorAll("[data-detail]")];
+  const heading = section.querySelector("[data-craft-heading]");
+  const copy = section.querySelector("[data-craft-copy]");
+  let selected = "window";
+
+  for (const control of controls) {
+    control.addEventListener("click", () => {
+      const key = control.dataset.detail;
+      if (key === selected) return;
+      selected = key;
+      heading.textContent = details[key].heading;
+      copy.textContent = details[key].copy;
+      for (const item of controls) {
+        item.setAttribute("aria-pressed", String(item.dataset.detail === key));
+      }
+    });
+  }
 })();

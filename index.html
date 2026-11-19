@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet"/>
 
-<link rel="stylesheet" href="style.css?v=20261117-tunel"/>
+<link rel="stylesheet" href="style.css?v=20261119-reformas"/>
 
 <!-- ============ JSON-LD · LocalBusiness ============ -->
 <script type="application/ld+json">
@@ -68,7 +68,7 @@
       </span>
     </a>
     <nav class="nav__links" id="menu" aria-label="Menú principal">
-      <a href="#como">Cómo trabajo</a>
+      <a href="#como">Reformas</a>
       <a href="#servicios">Trabajos</a>
       <a href="#oficio">Manolo</a>
       <a href="#contacto">Contacto</a>
@@ -92,49 +92,132 @@
     </div>
   </section>
 
-  <section class="story" id="como" aria-labelledby="story-heading">
+  <section class="reform-history" id="como" aria-labelledby="history-title">
     <div class="container">
-      <div class="story__intro">
-        <p class="eyebrow">Túnel del tiempo de la obra</p>
-        <h2 id="story-heading">De la primera marca al último remate.</h2>
-        <p>Cuatro visitas a la misma obra, desde las primeras marcas en el terreno hasta el patio terminado.</p>
+      <div class="history-intro">
+        <h2 id="history-title">Cuatro épocas de obra y reforma</h2>
+        <p>Desliza por la página o pulsa «Antes» y «Después» para ver cada transformación.</p>
+        <p class="history-note">Recreaciones ilustrativas de obra y reforma.</p>
+        <nav class="history-links" aria-label="Más sobre las reformas">
+          <a href="#lo-que-no-se-ve">Detalles de fachada</a>
+          <a href="#oficio">Conoce a Manolo</a>
+        </nav>
       </div>
-      <p class="story__instruction">Baja para avanzar por la obra o elige una etapa.</p>
-      <div class="story__layout" id="obra-recorrido">
-        <figure class="story__figure" id="obra-escena">
-          <div class="story__frames" aria-hidden="true">
-            <div class="story__frame is-current"></div>
-            <div class="story__frame"></div>
-            <div class="story__frame"></div>
-            <div class="story__frame"></div>
-            <span class="story__survey-line"></span>
+      <nav class="era-nav" aria-label="Épocas del recorrido">
+        <a href="#era-1980" aria-current="location">Años 80</a>
+        <a href="#era-1990">Años 90</a>
+        <a href="#era-2000">Años 2000</a>
+        <a href="#era-2026">2026</a>
+      </nav>
+      <section class="chapter" id="era-1980" aria-labelledby="title-1980" data-stage="before" data-before="Revoco desprendido y contraventanas desgastadas." data-after="Revoco de cal, carpintería recuperada y entrada de barro cocido.">
+        <div class="chapter__pin">
+          <div class="chapter__text">
+            <h3 id="title-1980">Años 80</h3>
+            <p class="caption">Revoco desprendido y contraventanas desgastadas.</p>
+            <div class="compare" role="group" aria-label="Comparar Años 80">
+              <button data-select="before" type="button" aria-pressed="true">Antes</button>
+              <button data-select="after" type="button" aria-pressed="false">Después</button>
+            </div>
           </div>
-          <div class="story__track" aria-hidden="true">
-            <i class="is-marked"></i><i></i><i></i><i></i>
+          <figure aria-labelledby="title-1980">
+            <img data-photo="before" src="images/reformas/1980-antes.webp" loading="lazy" decoding="async" width="1152" height="768" alt="Casa baja con desconchados y dos obreros, en una recreación de foto de carrete.">
+            <img data-photo="after" src="images/reformas/1980-despues.webp" loading="lazy" decoding="async" width="1152" height="768" alt="La casa baja rehabilitada, vista desde el lateral derecho, en una recreación de foto de carrete." aria-hidden="true">
+          </figure>
+        </div>
+      </section>
+
+      <section class="chapter" id="era-1990" aria-labelledby="title-1990" data-stage="before" data-before="Desconchados en la fachada y humedad bajo el balcón." data-after="Fachada y balcón restaurados con un nuevo pavimento de acceso.">
+        <div class="chapter__pin">
+          <div class="chapter__text">
+            <h3 id="title-1990">Años 90</h3>
+            <p class="caption">Desconchados en la fachada y humedad bajo el balcón.</p>
+            <div class="compare" role="group" aria-label="Comparar Años 90">
+              <button data-select="before" type="button" aria-pressed="true">Antes</button>
+              <button data-select="after" type="button" aria-pressed="false">Después</button>
+            </div>
           </div>
-          <figcaption>
-            <span id="stage-caption">01 / 04 · Terreno y replanteo</span>
-            <small>Secuencia ilustrativa</small>
-          </figcaption>
-        </figure>
-        <ol class="story__steps">
-          <li class="story__step is-current">
-            <h3><button type="button" data-stage="0" aria-pressed="true"><span>01</span> Terreno y replanteo</button></h3>
-            <p>Marcamos las medidas y las alturas antes de empezar la cimentación.</p>
-          </li>
-          <li class="story__step">
-            <h3><button type="button" data-stage="1" aria-pressed="false"><span>02</span> Levantar la estructura</button></h3>
-            <p>La cuadrilla levanta los muros y comprueba los huecos que darán al patio.</p>
-          </li>
-          <li class="story__step">
-            <h3><button type="button" data-stage="2" aria-pressed="false"><span>03</span> Piedra y cerramientos</button></h3>
-            <p>Colocamos la piedra, montamos el porche de madera y rematamos los encuentros con la carpintería.</p>
-          </li>
-          <li class="story__step">
-            <h3><button type="button" data-stage="3" aria-pressed="false"><span>04</span> Revisar los remates</button></h3>
-            <p>Repasamos los acabados, recogemos el patio y plantamos un olivo joven en un lateral.</p>
-          </li>
-        </ol>
+          <figure aria-labelledby="title-1990">
+            <img data-photo="before" src="images/reformas/1990-antes.webp" loading="lazy" decoding="async" width="1152" height="768" alt="Casa de dos plantas en obras, con una hormigonera y dos trabajadores.">
+            <img data-photo="after" src="images/reformas/1990-despues.webp" loading="lazy" decoding="async" width="1152" height="768" alt="La casa rehabilitada, con un coche de los 90 y dos hombres charlando a la entrada." aria-hidden="true">
+          </figure>
+        </div>
+      </section>
+
+      <section class="chapter" id="era-2000" aria-labelledby="title-2000" data-stage="before" data-before="Porche deteriorado y pavimento exterior dañado." data-after="Carpintería de aluminio, pavimento cerámico y drenaje nuevo en el porche.">
+        <div class="chapter__pin">
+          <div class="chapter__text">
+            <h3 id="title-2000">Años 2000</h3>
+            <p class="caption">Porche deteriorado y pavimento exterior dañado.</p>
+            <div class="compare" role="group" aria-label="Comparar Años 2000">
+              <button data-select="before" type="button" aria-pressed="true">Antes</button>
+              <button data-select="after" type="button" aria-pressed="false">Después</button>
+            </div>
+          </div>
+          <figure aria-labelledby="title-2000">
+            <img data-photo="before" src="images/reformas/2000-antes.webp" loading="lazy" decoding="async" width="1152" height="768" alt="Operarios y material ante un porche deteriorado, a la sombra de un pino.">
+            <img data-photo="after" src="images/reformas/2000-despues.webp" loading="lazy" decoding="async" width="1152" height="768" alt="El porche terminado con un triciclo, un balón y leña junto al lateral." aria-hidden="true">
+          </figure>
+        </div>
+      </section>
+
+      <section class="chapter" id="era-2026" aria-labelledby="title-2026" data-stage="before" data-before="Villa en obra con trabajos de albañilería en las dos plantas y el mar al fondo." data-after="Villa terminada con grandes ventanales y terraza abierta al Mediterráneo.">
+        <div class="chapter__pin">
+          <div class="chapter__text">
+            <h3 id="title-2026">2026</h3>
+            <p class="caption">Villa en obra con trabajos de albañilería en las dos plantas y el mar al fondo.</p>
+            <div class="compare" role="group" aria-label="Comparar 2026">
+              <button data-select="before" type="button" aria-pressed="true">Antes</button>
+              <button data-select="after" type="button" aria-pressed="false">Después</button>
+            </div>
+          </div>
+          <figure aria-labelledby="title-2026">
+            <img data-photo="before" src="images/reformas/2026-antes.webp" loading="lazy" decoding="async" width="1152" height="768" alt="Villa en obras con muros de ladrillo, cuatro obreros, una furgoneta y el mar al fondo.">
+            <img data-photo="after" src="images/reformas/2026-despues.webp" loading="lazy" decoding="async" width="1152" height="768" alt="La villa acabada con amplios ventanales, terraza y mar abierto al fondo." aria-hidden="true">
+          </figure>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="craft page-section container" id="lo-que-no-se-ve" aria-labelledby="craft-title">
+    <h2 id="craft-title">Lo que no se ve en una reforma</h2>
+    <p class="craft-intro">En una fachada con humedad, estos tres puntos ayudan a entender por dónde entra el agua y cómo sale.</p>
+    <div class="craft-grid">
+      <div>
+        <div class="craft-photo" role="group" aria-label="Fachada con tres puntos interactivos">
+          <img src="images/reformas/detalle-fachada.webp" loading="lazy" decoding="async" width="1080" height="720" alt="Fachada terminada con una ventana, un zócalo visible y una rejilla a ras de la terraza.">
+          <button class="craft-pin" style="--x:31%;--y:47%" type="button" data-detail="window" aria-controls="craft-panel" aria-label="1. Ventana" aria-pressed="true">1</button>
+          <button class="craft-pin" style="--x:13.5%;--y:66%" type="button" data-detail="base" aria-controls="craft-panel" aria-label="2. Zócalo" aria-pressed="false">2</button>
+          <button class="craft-pin" style="--x:81.5%;--y:73.3%" type="button" data-detail="drain" aria-controls="craft-panel" aria-label="3. Salida del agua" aria-pressed="false">3</button>
+        </div>
+        <p class="craft-note">Ejemplo ilustrativo de una fachada rehabilitada.</p>
+      </div>
+      <div>
+        <div class="craft-choices" role="group" aria-label="Detalle de la fachada">
+          <button class="craft-choice" type="button" data-detail="window" aria-controls="craft-panel" aria-pressed="true">1. Ventana</button>
+          <button class="craft-choice" type="button" data-detail="base" aria-controls="craft-panel" aria-pressed="false">2. Zócalo</button>
+          <button class="craft-choice" type="button" data-detail="drain" aria-controls="craft-panel" aria-pressed="false">3. Salida del agua</button>
+        </div>
+        <div class="craft-panel" id="craft-panel" aria-live="polite" aria-atomic="true">
+          <h3 data-craft-heading>El encuentro con la ventana</h3>
+          <p data-craft-copy>Revisamos la junta entre el marco y la pared y el vierteaguas de debajo. Ese remate ayuda a que la lluvia caiga hacia fuera y se separe de la fachada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="oficio" aria-labelledby="manolo-title">
+    <div class="page-section container about__grid">
+      <figure class="about__portrait">
+        <div class="about__photo">
+          <img src="images/retrato-mediterraneo.webp" loading="lazy" decoding="async" width="1024" height="1536" alt="Manolo Rodríguez con su chaleco de trabajo y el mar al fondo.">
+        </div>
+        <figcaption>Manolo Rodríguez · Albañil en Roses y el Alt Empordà</figcaption>
+      </figure>
+      <div class="about__text">
+        <h2 id="manolo-title">Conoce a Manolo</h2>
+        <p>Lleva más de 50 años levantando, reformando y reparando casas en el Empordà. La primera visita es para ver la obra contigo, hablar de qué hace falta y decidir por dónde empezar.</p>
+        <p>Tratas directamente con él, desde esa primera visita hasta el último repaso.</p>
       </div>
     </div>
   </section>
@@ -149,20 +232,6 @@
       <div><h3>Fachadas y rehabilitación</h3><p>Reparar muros, revocos y acabados exteriores.</p></div>
       <div><h3>Tejados y goteras</h3><p>Revisar cubiertas y buscar el origen de las filtraciones.</p></div>
       <div><h3>Piedra y exteriores</h3><p>Muros, pavimentos y remates de piedra.</p></div>
-    </div>
-  </section>
-
-  <section class="about" id="oficio">
-    <div class="page-section container about__grid">
-      <figure class="about__portrait">
-        <img src="images/retrato-mediterraneo.webp" alt="Retrato de Manolo Rodríguez con su chaleco de trabajo" width="1024" height="1536" loading="lazy"/>
-      </figure>
-      <div>
-        <p class="eyebrow">Manolo Rodríguez</p>
-        <h2>Con quien hablas es con quien hace la obra.</h2>
-        <p>Soy Manolo. Llevo más de 50 años levantando, reformando y reparando casas en el Empordà. Si me llamas, hablaremos de lo que necesita tu casa y de cómo lo podemos hacer.</p>
-        <p class="about__place">Roses y el Alt Empordà</p>
-      </div>
     </div>
   </section>
 
@@ -234,6 +303,6 @@
     </nav>
   </div>
 </footer>
-<script src="script.js?v=20261117-tunel" defer></script>
+<script src="script.js?v=20261119-reformas" defer></script>
 </body>
 </html>
