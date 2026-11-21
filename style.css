@@ -436,6 +436,17 @@ button { color: inherit; }
   .chapter__text { display: block; }
   .chapter__text p { margin: .35rem 0; }
 }
+@media (max-width: 740px) and (prefers-reduced-motion: no-preference) {
+  .reform-history .chapter { min-height: 0; }
+
+  /* Leave a short interval for the before/after change while the photo is pinned. */
+  .reform-history .chapter::after {
+    content: "";
+    display: block;
+    height: clamp(7rem, 20svh, 11rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reform-history .chapter { min-height: 0; margin-bottom: 1.6rem; }
   .chapter__pin { position: static; }
