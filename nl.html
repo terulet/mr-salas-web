@@ -79,6 +79,7 @@
   "knowsAbout": ["Metselwerk", "Woningrenovatie", "Badkamerrenovatie", "Keukenrenovatie", "Gevels", "Daken en dakbedekking", "Natuurstenen muren", "Kleine bouwwerkzaamheden"]
 }
 </script>
+<link rel="stylesheet" href="selector-obra.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Naar de inhoud</a>
@@ -141,6 +142,80 @@
       </aside>
     </section>
   </div>
+  </section>
+
+  <section class="service-picker" id="servicios" aria-labelledby="service-picker-title">
+    <div class="container">
+      <div class="service-picker__intro">
+        <h2 id="service-picker-title">Wat wilt u renoveren?</h2>
+        <p>Kies het soort werk en stel uw WhatsApp-bericht aan Manolo op.</p>
+      </div>
+      <div class="service-picker__tabs" aria-label="Werkzaamheden" hidden>
+        <button type="button" id="obra-tab-vivienda" data-group="vivienda">Woning</button>
+        <button type="button" id="obra-tab-exterior" data-group="exterior">Buitenruimte</button>
+        <button type="button" id="obra-tab-reparaciones" data-group="reparaciones">Reparaties</button>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-vivienda" data-panel="vivienda">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/2026-despues.webp" width="1152" height="768" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustratieve afbeelding</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="reforma">
+              <span><strong>Woningrenovaties</strong><small>Een huis, appartement of tweede woning moderniseren.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="bano-cocina">
+              <span><strong>Badkamers en keukens</strong><small>De ruimtes vernieuwen die u dagelijks het meest gebruikt.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-exterior" data-panel="exterior">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/detalle-fachada.webp" width="1080" height="720" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustratieve afbeelding</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="fachada">
+              <span><strong>Gevels en gevelherstel</strong><small>Muren, pleisterwerk en buitenafwerking herstellen.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="exterior">
+              <span><strong>Steenwerk en buitenruimte</strong><small>Muren, bestrating en afwerking in natuursteen.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-reparaciones" data-panel="reparaciones">
+        <figure class="service-picker__photo">
+          <img src="images/proceso-obra.webp" width="2172" height="724" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustratieve afbeelding</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="tejado">
+              <span><strong>Daken en lekkages</strong><small>Daken inspecteren en de oorzaak van lekkages opsporen.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="reparacion">
+              <span><strong>Metselwerk en kleine bouwklussen</strong><small>Reparaties en kleine klussen die zorgvuldig moeten worden uitgevoerd.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="reform-history" id="como" aria-labelledby="history-title">
@@ -360,20 +435,7 @@
     </div>
   </section>
 
-  <section class="services page-section container" id="servicios">
-    <p class="eyebrow">Werkzaamheden</p>
-    <h2>Van een kleine reparatie tot een complete renovatie.</h2>
-    <div class="services__grid">
-      <div><h3><a href="#contacto" data-service="reforma">Woningrenovaties <span aria-hidden="true">→</span></a></h3><p>Een huis, appartement of tweede woning moderniseren.</p></div>
-      <div><h3><a href="#contacto" data-service="bano-cocina">Badkamers en keukens <span aria-hidden="true">→</span></a></h3><p>De ruimtes vernieuwen die u dagelijks het meest gebruikt.</p></div>
-      <div><h3><a href="#contacto" data-service="reparacion">Metselwerk en kleine bouwklussen <span aria-hidden="true">→</span></a></h3><p>Reparaties en kleine klussen die zorgvuldig moeten worden uitgevoerd.</p></div>
-      <div><h3><a href="#contacto" data-service="fachada">Gevels en gevelherstel <span aria-hidden="true">→</span></a></h3><p>Muren, pleisterwerk en buitenafwerking herstellen.</p></div>
-      <div><h3><a href="#contacto" data-service="tejado">Daken en lekkages <span aria-hidden="true">→</span></a></h3><p>Daken inspecteren en de oorzaak van lekkages opsporen.</p></div>
-      <div><h3><a href="#contacto" data-service="exterior">Steenwerk en buitenruimte <span aria-hidden="true">→</span></a></h3><p>Muren, bestrating en afwerking in natuursteen.</p></div>
-    </div>
-  </section>
-
-  <section class="questions page-section container" aria-labelledby="questions-heading">
+    <section class="questions page-section container" aria-labelledby="questions-heading">
     <h2 id="questions-heading">Vragen vooraf</h2>
     <details><summary>Neemt u ook kleine klussen aan?</summary><p>Ja. Vertel me wat u nodig heeft en waar de woning staat.</p></details>
     <details><summary>Wat kan ik het beste vertellen als ik u bel?</summary><p>Vertel me in welke plaats de woning staat, wat u wilt renoveren of repareren en of er haast bij is. Foto’s kunt u ook via WhatsApp sturen.</p></details>
@@ -466,5 +528,6 @@
 <script src="portada-cine.js" defer></script>
 <script src="visor-obra.js?v=20261121-neerlandes" defer></script>
 <script src="contacto-movil.js" defer></script>
+<script src="selector-obra.js" defer></script>
 </body>
 </html>

@@ -79,6 +79,7 @@
   "knowsAbout": ["Masonry", "Home renovations", "Bathroom renovations", "Kitchen renovations", "Façades", "Roofing", "Stone walls", "Small building jobs"]
 }
 </script>
+<link rel="stylesheet" href="selector-obra.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Skip to content</a>
@@ -141,6 +142,80 @@
       </aside>
     </section>
   </div>
+  </section>
+
+  <section class="service-picker" id="servicios" aria-labelledby="service-picker-title">
+    <div class="container">
+      <div class="service-picker__intro">
+        <h2 id="service-picker-title">What would you like to renovate?</h2>
+        <p>Choose the type of work and draft a WhatsApp message to Manolo.</p>
+      </div>
+      <div class="service-picker__tabs" aria-label="Services" hidden>
+        <button type="button" id="obra-tab-vivienda" data-group="vivienda">Home</button>
+        <button type="button" id="obra-tab-exterior" data-group="exterior">Exterior</button>
+        <button type="button" id="obra-tab-reparaciones" data-group="reparaciones">Repairs</button>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-vivienda" data-panel="vivienda">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/2026-despues.webp" width="1152" height="768" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustrative image</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="reforma">
+              <span><strong>Home renovations</strong><small>Update a house, flat or second home.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="bano-cocina">
+              <span><strong>Bathrooms and kitchens</strong><small>Renovate the rooms you use most.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-exterior" data-panel="exterior">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/detalle-fachada.webp" width="1080" height="720" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustrative image</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="fachada">
+              <span><strong>Façades and restoration</strong><small>Repair walls, render and exterior finishes.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="exterior">
+              <span><strong>Stonework and outdoor areas</strong><small>Stone walls, paving and finishes.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-reparaciones" data-panel="reparaciones">
+        <figure class="service-picker__photo">
+          <img src="images/proceso-obra.webp" width="2172" height="724" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustrative image</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="tejado">
+              <span><strong>Roofing and leaks</strong><small>Inspect roofs and find the source of leaks.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="reparacion">
+              <span><strong>Masonry and small building jobs</strong><small>Repairs and small jobs deserve the same care.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="reform-history" id="como" aria-labelledby="history-title">
@@ -360,20 +435,7 @@
     </div>
   </section>
 
-  <section class="services page-section container" id="servicios">
-    <p class="eyebrow">Services</p>
-    <h2>From a small repair to a full renovation.</h2>
-    <div class="services__grid">
-      <div><h3><a href="#contacto" data-service="reforma">Home renovations <span aria-hidden="true">→</span></a></h3><p>Update a house, flat or second home.</p></div>
-      <div><h3><a href="#contacto" data-service="bano-cocina">Bathrooms and kitchens <span aria-hidden="true">→</span></a></h3><p>Renovate the rooms you use most.</p></div>
-      <div><h3><a href="#contacto" data-service="reparacion">Masonry and small building jobs <span aria-hidden="true">→</span></a></h3><p>Repairs and small jobs deserve the same care.</p></div>
-      <div><h3><a href="#contacto" data-service="fachada">Façades and restoration <span aria-hidden="true">→</span></a></h3><p>Repair walls, render and exterior finishes.</p></div>
-      <div><h3><a href="#contacto" data-service="tejado">Roofing and leaks <span aria-hidden="true">→</span></a></h3><p>Inspect roofs and find the source of leaks.</p></div>
-      <div><h3><a href="#contacto" data-service="exterior">Stonework and outdoor areas <span aria-hidden="true">→</span></a></h3><p>Stone walls, paving and finishes.</p></div>
-    </div>
-  </section>
-
-  <section class="questions page-section container" aria-labelledby="questions-heading">
+    <section class="questions page-section container" aria-labelledby="questions-heading">
     <h2 id="questions-heading">Questions before you get started</h2>
     <details><summary>Do you take on small jobs?</summary><p>Yes. Tell me what you need and where the property is.</p></details>
     <details><summary>What should I tell you when I call?</summary><p>Tell me where the property is, what you’d like to renovate or repair and whether it’s urgent. You can also send me photos on WhatsApp.</p></details>
@@ -466,5 +528,6 @@
 <script src="portada-cine.js" defer></script>
 <script src="visor-obra.js?v=20261121-neerlandes" defer></script>
 <script src="contacto-movil.js" defer></script>
+<script src="selector-obra.js" defer></script>
 </body>
 </html>

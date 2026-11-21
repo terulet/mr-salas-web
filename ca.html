@@ -79,6 +79,7 @@
   "knowsAbout": ["Feines de paleta", "Reformes d’habitatges", "Reformes de banys", "Reformes de cuines", "Façanes", "Cobertes i teulades", "Murs de pedra", "Obra menor"]
 }
 </script>
+<link rel="stylesheet" href="selector-obra.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Salta al contingut</a>
@@ -141,6 +142,80 @@
       </aside>
     </section>
   </div>
+  </section>
+
+  <section class="service-picker" id="servicios" aria-labelledby="service-picker-title">
+    <div class="container">
+      <div class="service-picker__intro">
+        <h2 id="service-picker-title">Què vols reformar?</h2>
+        <p>Tria el tipus d’obra i prepara una consulta per a en Manolo per WhatsApp.</p>
+      </div>
+      <div class="service-picker__tabs" aria-label="Treballs" hidden>
+        <button type="button" id="obra-tab-vivienda" data-group="vivienda">Habitatge</button>
+        <button type="button" id="obra-tab-exterior" data-group="exterior">Exterior</button>
+        <button type="button" id="obra-tab-reparaciones" data-group="reparaciones">Reparacions</button>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-vivienda" data-panel="vivienda">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/2026-despues.webp" width="1152" height="768" alt="" loading="lazy" decoding="async">
+          <figcaption>Imatge il·lustrativa</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="reforma">
+              <span><strong>Reformes d’habitatges</strong><small>Posar al dia una casa, un pis o una segona residència.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="bano-cocina">
+              <span><strong>Banys i cuines</strong><small>Renovar els espais que més fas servir cada dia.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-exterior" data-panel="exterior">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/detalle-fachada.webp" width="1080" height="720" alt="" loading="lazy" decoding="async">
+          <figcaption>Imatge il·lustrativa</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="fachada">
+              <span><strong>Façanes i rehabilitació</strong><small>Reparar murs, arrebossats i acabats exteriors.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="exterior">
+              <span><strong>Pedra i exteriors</strong><small>Murs, paviments i acabats de pedra.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-reparaciones" data-panel="reparaciones">
+        <figure class="service-picker__photo">
+          <img src="images/proceso-obra.webp" width="2172" height="724" alt="" loading="lazy" decoding="async">
+          <figcaption>Imatge il·lustrativa</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="tejado">
+              <span><strong>Teulades i goteres</strong><small>Revisar cobertes i buscar l’origen de les filtracions.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="reparacion">
+              <span><strong>Feines de paleta i obra menor</strong><small>Reparacions i feines petites que es mereixen estar ben fetes.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="reform-history" id="como" aria-labelledby="history-title">
@@ -360,20 +435,7 @@
     </div>
   </section>
 
-  <section class="services page-section container" id="servicios">
-    <p class="eyebrow">Treballs</p>
-    <h2>D’un petit arranjament a una reforma integral.</h2>
-    <div class="services__grid">
-      <div><h3><a href="#contacto" data-service="reforma">Reformes d’habitatges <span aria-hidden="true">→</span></a></h3><p>Posar al dia una casa, un pis o una segona residència.</p></div>
-      <div><h3><a href="#contacto" data-service="bano-cocina">Banys i cuines <span aria-hidden="true">→</span></a></h3><p>Renovar els espais que més fas servir cada dia.</p></div>
-      <div><h3><a href="#contacto" data-service="reparacion">Feines de paleta i obra menor <span aria-hidden="true">→</span></a></h3><p>Reparacions i feines petites que es mereixen estar ben fetes.</p></div>
-      <div><h3><a href="#contacto" data-service="fachada">Façanes i rehabilitació <span aria-hidden="true">→</span></a></h3><p>Reparar murs, arrebossats i acabats exteriors.</p></div>
-      <div><h3><a href="#contacto" data-service="tejado">Teulades i goteres <span aria-hidden="true">→</span></a></h3><p>Revisar cobertes i buscar l’origen de les filtracions.</p></div>
-      <div><h3><a href="#contacto" data-service="exterior">Pedra i exteriors <span aria-hidden="true">→</span></a></h3><p>Murs, paviments i acabats de pedra.</p></div>
-    </div>
-  </section>
-
-  <section class="questions page-section container" aria-labelledby="questions-heading">
+    <section class="questions page-section container" aria-labelledby="questions-heading">
     <h2 id="questions-heading">Preguntes abans de començar</h2>
     <details><summary>Fas feines petites?</summary><p>Sí. Digues-me què necessites i on és l’habitatge.</p></details>
     <details><summary>Què t’explico quan et truqui?</summary><p>Digues-me el municipi, què vols reformar o reparar i si és urgent. Si tens fotos, també me les pots enviar per WhatsApp.</p></details>
@@ -466,5 +528,6 @@
 <script src="portada-cine.js" defer></script>
 <script src="visor-obra.js?v=20261121-neerlandes" defer></script>
 <script src="contacto-movil.js" defer></script>
+<script src="selector-obra.js" defer></script>
 </body>
 </html>

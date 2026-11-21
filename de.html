@@ -79,6 +79,7 @@
   "knowsAbout": ["Maurerarbeiten", "Wohnraumsanierung", "Badsanierung", "Küchenrenovierung", "Fassaden", "Dacharbeiten", "Natursteinmauern", "Kleinere Bauarbeiten"]
 }
 </script>
+<link rel="stylesheet" href="selector-obra.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Zum Inhalt springen</a>
@@ -141,6 +142,80 @@
       </aside>
     </section>
   </div>
+  </section>
+
+  <section class="service-picker" id="servicios" aria-labelledby="service-picker-title">
+    <div class="container">
+      <div class="service-picker__intro">
+        <h2 id="service-picker-title">Was möchten Sie renovieren?</h2>
+        <p>Wählen Sie die Art der Arbeiten und bereiten Sie Ihre WhatsApp-Anfrage an Manolo vor.</p>
+      </div>
+      <div class="service-picker__tabs" aria-label="Leistungen" hidden>
+        <button type="button" id="obra-tab-vivienda" data-group="vivienda">Haus &amp; Wohnung</button>
+        <button type="button" id="obra-tab-exterior" data-group="exterior">Außenbereich</button>
+        <button type="button" id="obra-tab-reparaciones" data-group="reparaciones">Reparaturen</button>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-vivienda" data-panel="vivienda">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/2026-despues.webp" width="1152" height="768" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustrative Aufnahme</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="reforma">
+              <span><strong>Häuser und Wohnungen sanieren</strong><small>Modernisierung von Häusern, Wohnungen und Ferienimmobilien.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="bano-cocina">
+              <span><strong>Bäder und Küchen</strong><small>Die Räume renovieren, die Sie täglich am meisten nutzen.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-exterior" data-panel="exterior">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/detalle-fachada.webp" width="1080" height="720" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustrative Aufnahme</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="fachada">
+              <span><strong>Fassaden und Sanierung</strong><small>Mauern, Außenputz und Oberflächen im Freien instand setzen.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="exterior">
+              <span><strong>Steinarbeiten und Außenbereiche</strong><small>Mauern, Bodenbeläge und Abschlüsse aus Stein.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-reparaciones" data-panel="reparaciones">
+        <figure class="service-picker__photo">
+          <img src="images/proceso-obra.webp" width="2172" height="724" alt="" loading="lazy" decoding="async">
+          <figcaption>Illustrative Aufnahme</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="tejado">
+              <span><strong>Dächer und undichte Stellen</strong><small>Dächer prüfen und die Ursache für eindringendes Wasser finden.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="reparacion">
+              <span><strong>Maurerarbeiten und kleinere Bauarbeiten</strong><small>Reparaturen und kleinere Arbeiten, die eine saubere Ausführung verdienen.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="reform-history" id="como" aria-labelledby="history-title">
@@ -360,20 +435,7 @@
     </div>
   </section>
 
-  <section class="services page-section container" id="servicios">
-    <p class="eyebrow">Leistungen</p>
-    <h2>Von der kleinen Reparatur bis zur Komplettsanierung.</h2>
-    <div class="services__grid">
-      <div><h3><a href="#contacto" data-service="reforma">Häuser und Wohnungen sanieren <span aria-hidden="true">→</span></a></h3><p>Modernisierung von Häusern, Wohnungen und Ferienimmobilien.</p></div>
-      <div><h3><a href="#contacto" data-service="bano-cocina">Bäder und Küchen <span aria-hidden="true">→</span></a></h3><p>Die Räume renovieren, die Sie täglich am meisten nutzen.</p></div>
-      <div><h3><a href="#contacto" data-service="reparacion">Maurerarbeiten und kleinere Bauarbeiten <span aria-hidden="true">→</span></a></h3><p>Reparaturen und kleinere Arbeiten, die eine saubere Ausführung verdienen.</p></div>
-      <div><h3><a href="#contacto" data-service="fachada">Fassaden und Sanierung <span aria-hidden="true">→</span></a></h3><p>Mauern, Außenputz und Oberflächen im Freien instand setzen.</p></div>
-      <div><h3><a href="#contacto" data-service="tejado">Dächer und undichte Stellen <span aria-hidden="true">→</span></a></h3><p>Dächer prüfen und die Ursache für eindringendes Wasser finden.</p></div>
-      <div><h3><a href="#contacto" data-service="exterior">Steinarbeiten und Außenbereiche <span aria-hidden="true">→</span></a></h3><p>Mauern, Bodenbeläge und Abschlüsse aus Stein.</p></div>
-    </div>
-  </section>
-
-  <section class="questions page-section container" aria-labelledby="questions-heading">
+    <section class="questions page-section container" aria-labelledby="questions-heading">
     <h2 id="questions-heading">Fragen vor dem Start</h2>
     <details><summary>Übernehmen Sie auch kleinere Arbeiten?</summary><p>Ja. Sagen Sie mir, was Sie brauchen und wo sich das Objekt befindet.</p></details>
     <details><summary>Welche Angaben brauchen Sie bei einem Anruf?</summary><p>Nennen Sie mir den Ort, die geplanten Arbeiten und ob es dringend ist. Fotos können Sie mir auch per WhatsApp schicken.</p></details>
@@ -466,5 +528,6 @@
 <script src="portada-cine.js" defer></script>
 <script src="visor-obra.js?v=20261121-neerlandes" defer></script>
 <script src="contacto-movil.js" defer></script>
+<script src="selector-obra.js" defer></script>
 </body>
 </html>

@@ -79,6 +79,7 @@
   "knowsAbout": ["Maçonnerie", "Rénovation de logements", "Rénovation de salles de bains", "Rénovation de cuisines", "Façades", "Couvertures et toitures", "Murs en pierre", "Petits travaux"]
 }
 </script>
+<link rel="stylesheet" href="selector-obra.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Aller au contenu</a>
@@ -141,6 +142,80 @@
       </aside>
     </section>
   </div>
+  </section>
+
+  <section class="service-picker" id="servicios" aria-labelledby="service-picker-title">
+    <div class="container">
+      <div class="service-picker__intro">
+        <h2 id="service-picker-title">Que souhaitez-vous rénover ?</h2>
+        <p>Choisissez le type de travaux et préparez votre message WhatsApp à Manolo.</p>
+      </div>
+      <div class="service-picker__tabs" aria-label="Travaux" hidden>
+        <button type="button" id="obra-tab-vivienda" data-group="vivienda">Logement</button>
+        <button type="button" id="obra-tab-exterior" data-group="exterior">Extérieur</button>
+        <button type="button" id="obra-tab-reparaciones" data-group="reparaciones">Réparations</button>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-vivienda" data-panel="vivienda">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/2026-despues.webp" width="1152" height="768" alt="" loading="lazy" decoding="async">
+          <figcaption>Image d’illustration</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="reforma">
+              <span><strong>Rénovation de logements</strong><small>Rénover une maison, un appartement ou une résidence secondaire.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="bano-cocina">
+              <span><strong>Salles de bains et cuisines</strong><small>Rénover les pièces que vous utilisez le plus au quotidien.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-exterior" data-panel="exterior">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/detalle-fachada.webp" width="1080" height="720" alt="" loading="lazy" decoding="async">
+          <figcaption>Image d’illustration</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="fachada">
+              <span><strong>Façades et réhabilitation</strong><small>Réparer des murs, des enduits et des finitions extérieures.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="exterior">
+              <span><strong>Pierre et aménagements extérieurs</strong><small>Murs, revêtements de sol et finitions en pierre.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-reparaciones" data-panel="reparaciones">
+        <figure class="service-picker__photo">
+          <img src="images/proceso-obra.webp" width="2172" height="724" alt="" loading="lazy" decoding="async">
+          <figcaption>Image d’illustration</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="tejado">
+              <span><strong>Toitures et fuites</strong><small>Inspecter les toitures et chercher l’origine des infiltrations.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="reparacion">
+              <span><strong>Maçonnerie et petits travaux</strong><small>Des réparations et des petits travaux qui méritent d’être faits avec soin.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="reform-history" id="como" aria-labelledby="history-title">
@@ -360,20 +435,7 @@
     </div>
   </section>
 
-  <section class="services page-section container" id="servicios">
-    <p class="eyebrow">Travaux</p>
-    <h2>De la petite réparation à la rénovation complète.</h2>
-    <div class="services__grid">
-      <div><h3><a href="#contacto" data-service="reforma">Rénovation de logements <span aria-hidden="true">→</span></a></h3><p>Rénover une maison, un appartement ou une résidence secondaire.</p></div>
-      <div><h3><a href="#contacto" data-service="bano-cocina">Salles de bains et cuisines <span aria-hidden="true">→</span></a></h3><p>Rénover les pièces que vous utilisez le plus au quotidien.</p></div>
-      <div><h3><a href="#contacto" data-service="reparacion">Maçonnerie et petits travaux <span aria-hidden="true">→</span></a></h3><p>Des réparations et des petits travaux qui méritent d’être faits avec soin.</p></div>
-      <div><h3><a href="#contacto" data-service="fachada">Façades et réhabilitation <span aria-hidden="true">→</span></a></h3><p>Réparer des murs, des enduits et des finitions extérieures.</p></div>
-      <div><h3><a href="#contacto" data-service="tejado">Toitures et fuites <span aria-hidden="true">→</span></a></h3><p>Inspecter les toitures et chercher l’origine des infiltrations.</p></div>
-      <div><h3><a href="#contacto" data-service="exterior">Pierre et aménagements extérieurs <span aria-hidden="true">→</span></a></h3><p>Murs, revêtements de sol et finitions en pierre.</p></div>
-    </div>
-  </section>
-
-  <section class="questions page-section container" aria-labelledby="questions-heading">
+    <section class="questions page-section container" aria-labelledby="questions-heading">
     <h2 id="questions-heading">Vos questions avant de commencer</h2>
     <details><summary>Faites-vous de petits travaux ?</summary><p>Oui. Dites-moi ce dont vous avez besoin et où se trouve votre logement.</p></details>
     <details><summary>Que dois-je vous préciser lorsque je vous appelle ?</summary><p>Indiquez-moi la commune, ce que vous souhaitez rénover ou réparer, et si c’est urgent. Si vous avez des photos, vous pouvez aussi me les envoyer sur WhatsApp.</p></details>
@@ -466,5 +528,6 @@
 <script src="portada-cine.js" defer></script>
 <script src="visor-obra.js?v=20261121-neerlandes" defer></script>
 <script src="contacto-movil.js" defer></script>
+<script src="selector-obra.js" defer></script>
 </body>
 </html>

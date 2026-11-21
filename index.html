@@ -79,6 +79,7 @@
   "knowsAbout": ["Albañilería", "Reformas de viviendas", "Reformas de baños", "Reformas de cocinas", "Fachadas", "Cubiertas y tejados", "Muros de piedra", "Obra menor"]
 }
 </script>
+<link rel="stylesheet" href="selector-obra.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -141,6 +142,80 @@
       </aside>
     </section>
   </div>
+  </section>
+
+  <section class="service-picker" id="servicios" aria-labelledby="service-picker-title">
+    <div class="container">
+      <div class="service-picker__intro">
+        <h2 id="service-picker-title">¿Qué quieres reformar?</h2>
+        <p>Elige el tipo de obra y prepara tu consulta a Manolo por WhatsApp.</p>
+      </div>
+      <div class="service-picker__tabs" aria-label="Trabajos" hidden>
+        <button type="button" id="obra-tab-vivienda" data-group="vivienda">Vivienda</button>
+        <button type="button" id="obra-tab-exterior" data-group="exterior">Exterior</button>
+        <button type="button" id="obra-tab-reparaciones" data-group="reparaciones">Reparaciones</button>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-vivienda" data-panel="vivienda">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/2026-despues.webp" width="1152" height="768" alt="" loading="lazy" decoding="async">
+          <figcaption>Imagen ilustrativa</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="reforma">
+              <span><strong>Reformas de vivienda</strong><small>Actualizar una casa, un piso o una segunda residencia.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="bano-cocina">
+              <span><strong>Baños y cocinas</strong><small>Renovar los espacios que más usas cada día.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-exterior" data-panel="exterior">
+        <figure class="service-picker__photo">
+          <img src="images/reformas/detalle-fachada.webp" width="1080" height="720" alt="" loading="lazy" decoding="async">
+          <figcaption>Imagen ilustrativa</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="fachada">
+              <span><strong>Fachadas y rehabilitación</strong><small>Reparar muros, revocos y acabados exteriores.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="exterior">
+              <span><strong>Piedra y exteriores</strong><small>Muros, pavimentos y remates de piedra.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="service-picker__panel" id="obra-panel-reparaciones" data-panel="reparaciones">
+        <figure class="service-picker__photo">
+          <img src="images/proceso-obra.webp" width="2172" height="724" alt="" loading="lazy" decoding="async">
+          <figcaption>Imagen ilustrativa</figcaption>
+        </figure>
+        <ul class="service-picker__links">
+          <li>
+            <a href="#contacto" data-service="tejado">
+              <span><strong>Tejados y goteras</strong><small>Revisar cubiertas y buscar el origen de las filtraciones.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="reparacion">
+              <span><strong>Albañilería y obra menor</strong><small>Reparaciones y trabajos pequeños que merecen hacerse bien.</small></span>
+              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="reform-history" id="como" aria-labelledby="history-title">
@@ -360,20 +435,7 @@
     </div>
   </section>
 
-  <section class="services page-section container" id="servicios">
-    <p class="eyebrow">Trabajos</p>
-    <h2>De un arreglo a una reforma entera.</h2>
-    <div class="services__grid">
-      <div><h3><a href="#contacto" data-service="reforma">Reformas de vivienda <span aria-hidden="true">→</span></a></h3><p>Actualizar una casa, un piso o una segunda residencia.</p></div>
-      <div><h3><a href="#contacto" data-service="bano-cocina">Baños y cocinas <span aria-hidden="true">→</span></a></h3><p>Renovar los espacios que más usas cada día.</p></div>
-      <div><h3><a href="#contacto" data-service="reparacion">Albañilería y obra menor <span aria-hidden="true">→</span></a></h3><p>Reparaciones y trabajos pequeños que merecen hacerse bien.</p></div>
-      <div><h3><a href="#contacto" data-service="fachada">Fachadas y rehabilitación <span aria-hidden="true">→</span></a></h3><p>Reparar muros, revocos y acabados exteriores.</p></div>
-      <div><h3><a href="#contacto" data-service="tejado">Tejados y goteras <span aria-hidden="true">→</span></a></h3><p>Revisar cubiertas y buscar el origen de las filtraciones.</p></div>
-      <div><h3><a href="#contacto" data-service="exterior">Piedra y exteriores <span aria-hidden="true">→</span></a></h3><p>Muros, pavimentos y remates de piedra.</p></div>
-    </div>
-  </section>
-
-  <section class="questions page-section container" aria-labelledby="questions-heading">
+    <section class="questions page-section container" aria-labelledby="questions-heading">
     <h2 id="questions-heading">Preguntas antes de empezar</h2>
     <details><summary>¿Haces trabajos pequeños?</summary><p>Sí. Cuéntame qué necesitas y dónde está la vivienda.</p></details>
     <details><summary>¿Qué te cuento cuando te llame?</summary><p>Dime el municipio, qué quieres reformar o reparar y si es urgente. Si tienes fotos, también puedes enviarlas por WhatsApp.</p></details>
@@ -466,5 +528,6 @@
 <script src="portada-cine.js" defer></script>
 <script src="visor-obra.js?v=20261121-neerlandes" defer></script>
 <script src="contacto-movil.js" defer></script>
+<script src="selector-obra.js" defer></script>
 </body>
 </html>
