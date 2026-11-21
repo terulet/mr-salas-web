@@ -15,11 +15,15 @@
   var toggle = document.getElementById("toggle");
   var menu = document.getElementById("menu");
   var languages = nav.querySelector(".lang-menu");
-  var catalan = document.documentElement.lang === "ca";
+  const menuLabels = {
+    es: ["Abrir menú", "Cerrar menú"],
+    ca: ["Obre el menú", "Tanca el menú"],
+    fr: ["Ouvrir le menu", "Fermer le menu"]
+  };
+  const labels = menuLabels[document.documentElement.lang] ?? menuLabels.es;
   function setMenu(open) {
     menu.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
-    const labels = catalan ? ["Obre el menú", "Tanca el menú"] : ["Abrir menú", "Cerrar menú"];
     toggle.setAttribute("aria-label", labels[Number(open)]);
   }
   toggle.addEventListener("click", function () {
@@ -126,33 +130,51 @@
 
 (() => {
   const section = document.getElementById("lo-que-no-se-ve");
-  const details = document.documentElement.lang === "ca" ? {
-    window: {
-      heading: "La junta de la finestra",
-      copy: "Revisem la junta entre el marc i la paret i el trencaaigües de sota. Aquest acabat ajuda a fer que l’aigua de la pluja caigui enfora, lluny de la façana."
+  const localized = {
+    es: {
+      window: {
+        heading: "El encuentro con la ventana",
+        copy: "Revisamos la junta entre el marco y la pared y el vierteaguas de debajo. Ese remate ayuda a que la lluvia caiga hacia fuera y se separe de la fachada."
+      },
+      base: {
+        heading: "El zócalo de la fachada",
+        copy: "La parte baja recibe salpicaduras y está cerca del terreno. Miramos de dónde viene la humedad antes de decidir cómo reparar y rematar el muro."
+      },
+      drain: {
+        heading: "La salida del agua",
+        copy: "Comprobamos hacia dónde corre la lluvia desde la terraza. En este ejemplo, la pendiente lleva el agua hasta una rejilla a ras de suelo."
+      }
     },
-    base: {
-      heading: "El sòcol de la façana",
-      copy: "La part baixa rep esquitxades i és a prop del terreny. Mirem d’on ve la humitat abans de decidir com reparar i rematar el mur."
+    ca: {
+      window: {
+        heading: "La junta de la finestra",
+        copy: "Revisem la junta entre el marc i la paret i el trencaaigües de sota. Aquest acabat ajuda a fer que l’aigua de la pluja caigui enfora, lluny de la façana."
+      },
+      base: {
+        heading: "El sòcol de la façana",
+        copy: "La part baixa rep esquitxades i és a prop del terreny. Mirem d’on ve la humitat abans de decidir com reparar i rematar el mur."
+      },
+      drain: {
+        heading: "La sortida de l’aigua",
+        copy: "Comprovem cap on s’escola l’aigua de la pluja des de la terrassa. En aquest exemple, el pendent la porta fins a una reixeta arran de terra."
+      }
     },
-    drain: {
-      heading: "La sortida de l’aigua",
-      copy: "Comprovem cap on s’escola l’aigua de la pluja des de la terrassa. En aquest exemple, el pendent la porta fins a una reixeta arran de terra."
-    }
-  } : {
-    window: {
-      heading: "El encuentro con la ventana",
-      copy: "Revisamos la junta entre el marco y la pared y el vierteaguas de debajo. Ese remate ayuda a que la lluvia caiga hacia fuera y se separe de la fachada."
-    },
-    base: {
-      heading: "El zócalo de la fachada",
-      copy: "La parte baja recibe salpicaduras y está cerca del terreno. Miramos de dónde viene la humedad antes de decidir cómo reparar y rematar el muro."
-    },
-    drain: {
-      heading: "La salida del agua",
-      copy: "Comprobamos hacia dónde corre la lluvia desde la terraza. En este ejemplo, la pendiente lleva el agua hasta una rejilla a ras de suelo."
+    fr: {
+      window: {
+        heading: "Le raccord autour de la fenêtre",
+        copy: "Nous vérifions le joint entre le cadre et le mur, ainsi que l’appui de fenêtre. Il aide à rejeter l’eau de pluie à l’écart de la façade."
+      },
+      base: {
+        heading: "Le soubassement de la façade",
+        copy: "Le bas de la façade reçoit des éclaboussures et se trouve près du sol. Nous cherchons l’origine de l’humidité avant de choisir comment réparer le mur et soigner les finitions."
+      },
+      drain: {
+        heading: "L’évacuation de l’eau",
+        copy: "Nous vérifions dans quelle direction s’écoule l’eau de pluie sur la terrasse. Ici, la pente la dirige vers une grille au ras du sol."
+      }
     }
   };
+  const details = localized[document.documentElement.lang] ?? localized.es;
   const controls = [...section.querySelectorAll("[data-detail]")];
   const heading = section.querySelector("[data-craft-heading]");
   const copy = section.querySelector("[data-craft-copy]");
@@ -179,23 +201,34 @@
   const draft = document.getElementById("salas-draft");
   const job = draft.querySelector("[data-job]");
   const town = draft.querySelector("[data-town]");
-  const preview = draft.querySelector("[data-message]");
+  const preview = draft.querySelector(".draft-message");
   const whatsapp = draft.querySelector("[data-whatsapp]");
   const destination = new URL(whatsapp.href);
 
-  const messages = document.documentElement.lang === "ca" ? {
-    greeting: "Hola, Manolo. ",
-    about: "Voldria fer-te una consulta sobre ",
-    at: " a ",
-    coverage: place => `Treballeu a ${place}?`,
-    unspecified: "Voldria confirmar si treballeu al meu municipi."
-  } : {
-    greeting: "Hola Manolo. ",
-    about: "Quería consultarte sobre ",
-    at: " en ",
-    coverage: place => `¿Trabajáis en ${place}?`,
-    unspecified: "Quería confirmar si trabajáis en mi municipio."
+  const localized = {
+    es: {
+      greeting: "Hola Manolo. ",
+      about: "Quería consultarte sobre ",
+      at: " en ",
+      coverage: place => `¿Trabajáis en ${place}?`,
+      unspecified: "Quería confirmar si trabajáis en mi municipio."
+    },
+    ca: {
+      greeting: "Hola, Manolo. ",
+      about: "Voldria fer-te una consulta sobre ",
+      at: " a ",
+      coverage: place => `Treballeu a ${place}?`,
+      unspecified: "Voldria confirmar si treballeu al meu municipi."
+    },
+    fr: {
+      greeting: "Bonjour Manolo, ",
+      about: "j’aimerais vous parler ",
+      at: " à ",
+      coverage: place => `intervenez-vous à ${place} ?`,
+      unspecified: "j’aimerais savoir si vous intervenez dans ma commune."
+    }
   };
+  const messages = localized[document.documentElement.lang] ?? localized.es;
 
   function updateMessage() {
     const municipality = town.value.trim();

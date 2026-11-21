@@ -6,20 +6,31 @@
     const title = root.querySelector('.work-caption h3');
     const description = root.querySelector('.work-caption p');
     const sweep = root.querySelector('.work-sweep');
-    const catalan = document.documentElement.lang === 'ca';
-    const stages = catalan ? {
-      before: ['El porxo abans de la reforma', 'El paviment exterior estava deteriorat i l’arrebossat s’havia desprès en diversos punts.'],
-      after: [title.textContent, description.textContent],
-      detail: ['Acabat del paviment a l’entrada', 'L’ampliació mostra la unió entre el terra del porxo, el graó i el sòcol del pilar.']
-    } : {
-      before: ['El porche antes de la reforma', 'El pavimento exterior estaba deteriorado y el revoco se había desprendido en varios puntos.'],
-      after: [title.textContent, description.textContent],
-      detail: ['Remate del pavimento en la entrada', 'La ampliación muestra el encuentro entre el suelo del porche, el peldaño y el zócalo del pilar.']
+    const localized = {
+      es: {
+        before: ['El porche antes de la reforma', 'El pavimento exterior estaba deteriorado y el revoco se había desprendido en varios puntos.'],
+        after: [title.textContent, description.textContent],
+        detail: ['Remate del pavimento en la entrada', 'La ampliación muestra el encuentro entre el suelo del porche, el peldaño y el zócalo del pilar.']
+      },
+      ca: {
+        before: ['El porxo abans de la reforma', 'El paviment exterior estava deteriorat i l’arrebossat s’havia desprès en diversos punts.'],
+        after: [title.textContent, description.textContent],
+        detail: ['Acabat del paviment a l’entrada', 'L’ampliació mostra la unió entre el terra del porxo, el graó i el sòcol del pilar.']
+      },
+      fr: {
+        before: ['Le porche avant les travaux', 'Le sol extérieur était abîmé et l’enduit s’était décollé par endroits.'],
+        after: [title.textContent, description.textContent],
+        detail: ['Finition du sol à l’entrée', 'Le gros plan montre le raccord entre le sol du porche, la marche et la base du pilier.']
+      }
     };
+    const stages = localized[document.documentElement.lang] ?? localized.es;
     const fullAlt = after.alt;
-    const detailAlt = catalan
-      ? 'Detall ampliat del graó, el paviment i el sòcol del pilar.'
-      : 'Detalle ampliado del peldaño, el pavimento y el zócalo del pilar.';
+    const detailDescriptions = {
+      es: 'Detalle ampliado del peldaño, el pavimento y el zócalo del pilar.',
+      ca: 'Detall ampliat del graó, el paviment i el sòcol del pilar.',
+      fr: 'Gros plan sur la marche, le revêtement du sol et la base du pilier.'
+    };
+    const detailAlt = detailDescriptions[document.documentElement.lang] ?? detailDescriptions.es;
     for (const miniature of root.querySelectorAll('[data-mini]')) {
       miniature.src = miniature.dataset.mini === 'before' ? before.src : after.src;
     }
