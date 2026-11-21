@@ -18,7 +18,8 @@
   const menuLabels = {
     es: ["Abrir menú", "Cerrar menú"],
     ca: ["Obre el menú", "Tanca el menú"],
-    fr: ["Ouvrir le menu", "Fermer le menu"]
+    fr: ["Ouvrir le menu", "Fermer le menu"],
+    en: ["Open menu", "Close menu"]
   };
   const labels = menuLabels[document.documentElement.lang] ?? menuLabels.es;
   function setMenu(open) {
@@ -172,6 +173,20 @@
         heading: "L’évacuation de l’eau",
         copy: "Nous vérifions dans quelle direction s’écoule l’eau de pluie sur la terrasse. Ici, la pente la dirige vers une grille au ras du sol."
       }
+    },
+    en: {
+      window: {
+        heading: "Where the window meets the wall",
+        copy: "We check the joint between the frame and the wall, as well as the sill below. The sill helps direct rainwater away from the façade."
+      },
+      base: {
+        heading: "The base of the wall",
+        copy: "The bottom of the wall is close to the ground and gets splashed when it rains. We look for the source of the damp before deciding how to repair and finish the wall."
+      },
+      drain: {
+        heading: "How the water drains",
+        copy: "We check where rainwater runs off the terrace. Here, the slope takes the water to a drain grate set flush with the paving."
+      }
     }
   };
   const details = localized[document.documentElement.lang] ?? localized.es;
@@ -226,6 +241,13 @@
       at: " à ",
       coverage: place => `intervenez-vous à ${place} ?`,
       unspecified: "j’aimerais savoir si vous intervenez dans ma commune."
+    },
+    en: {
+      greeting: "Hi Manolo, ",
+      about: "I’d like to ask about ",
+      at: " in ",
+      coverage: place => `do you take on jobs in ${place}?`,
+      unspecified: "I’d like to check if you work in my area."
     }
   };
   const messages = localized[document.documentElement.lang] ?? localized.es;
