@@ -20,7 +20,8 @@
     ca: ["Obre el menú", "Tanca el menú"],
     fr: ["Ouvrir le menu", "Fermer le menu"],
     en: ["Open menu", "Close menu"],
-    de: ["Menü öffnen", "Menü schließen"]
+    de: ["Menü öffnen", "Menü schließen"],
+    nl: ["Menu openen", "Menu sluiten"]
   };
   const labels = menuLabels[document.documentElement.lang] ?? menuLabels.es;
   function setMenu(open) {
@@ -202,6 +203,20 @@
         heading: "Wie das Wasser abfließt",
         copy: "Wir prüfen, wohin das Regenwasser auf der Terrasse abfließt. Hier leitet das Gefälle das Wasser zu einem Ablaufgitter auf Höhe des Belags."
       }
+    },
+    nl: {
+      window: {
+        heading: "De aansluiting rond het raam",
+        copy: "We controleren de aansluiting tussen het kozijn en de muur, en de raamdorpel eronder. Die voert regenwater weg van de gevel."
+      },
+      base: {
+        heading: "De plint onderaan de gevel",
+        copy: "De onderkant van de gevel ligt dicht bij de grond en vangt opspattend water op. We zoeken eerst uit waar het vocht vandaan komt en bepalen dan hoe we de muur herstellen en afwerken."
+      },
+      drain: {
+        heading: "Hoe het water wegloopt",
+        copy: "We kijken welke kant het regenwater op het terras op stroomt. Hier voert de helling het water naar een rooster dat gelijk ligt met de bestrating."
+      }
     }
   };
   const details = localized[document.documentElement.lang] ?? localized.es;
@@ -270,6 +285,13 @@
       at: " in ",
       coverage: place => `übernehmen Sie auch Arbeiten in ${place}?`,
       unspecified: "ich würde gern wissen, ob Sie auch in meiner Gemeinde arbeiten."
+    },
+    nl: {
+      greeting: "Hallo Manolo, ",
+      about: "ik heb een vraag over ",
+      at: " in ",
+      coverage: place => `werkt u ook in ${place}?`,
+      unspecified: "ik wil graag weten of u ook in mijn gemeente werkt."
     }
   };
   const messages = localized[document.documentElement.lang] ?? localized.es;

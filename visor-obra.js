@@ -31,6 +31,11 @@
         before: ['Der Vorbau vor der Sanierung', 'Der Außenbelag war beschädigt und der Putz stellenweise abgeplatzt.'],
         after: [title.textContent, description.textContent],
         detail: ['Bodenbelag am Eingang im Detail', 'Die Nahaufnahme zeigt den Übergang zwischen dem Boden des Vorbaus, der Stufe und dem Sockel des Pfeilers.']
+      },
+      nl: {
+        before: ['De veranda vóór de renovatie', 'De bestrating was beschadigd en het pleisterwerk liet op verschillende plekken los.'],
+        after: [title.textContent, description.textContent],
+        detail: ['Detail van de bestrating bij de ingang', 'De detailfoto toont de aansluiting tussen de vloer van de veranda, de trede en de voet van de pijler.']
       }
     };
     const stages = localized[document.documentElement.lang] ?? localized.es;
@@ -40,7 +45,8 @@
       ca: 'Detall ampliat del graó, el paviment i el sòcol del pilar.',
       fr: 'Gros plan sur la marche, le revêtement du sol et la base du pilier.',
       en: 'Close-up of the step, paving and base of the pillar.',
-      de: 'Nahaufnahme von Stufe, Bodenbelag und Pfeilersockel.'
+      de: 'Nahaufnahme von Stufe, Bodenbelag und Pfeilersockel.',
+      nl: 'Detailfoto van de trede, de bestrating en de voet van de pijler.'
     };
     const detailAlt = detailDescriptions[document.documentElement.lang] ?? detailDescriptions.es;
     for (const miniature of root.querySelectorAll('[data-mini]')) {
