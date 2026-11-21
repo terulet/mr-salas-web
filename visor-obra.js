@@ -26,6 +26,11 @@
         before: ['The porch before renovation', 'The outdoor paving was damaged and the render had flaked off in places.'],
         after: [title.textContent, description.textContent],
         detail: ['Paving detail at the entrance', 'The close-up shows where the porch floor, step and base of the pillar meet.']
+      },
+      de: {
+        before: ['Der Vorbau vor der Sanierung', 'Der Außenbelag war beschädigt und der Putz stellenweise abgeplatzt.'],
+        after: [title.textContent, description.textContent],
+        detail: ['Bodenbelag am Eingang im Detail', 'Die Nahaufnahme zeigt den Übergang zwischen dem Boden des Vorbaus, der Stufe und dem Sockel des Pfeilers.']
       }
     };
     const stages = localized[document.documentElement.lang] ?? localized.es;
@@ -34,7 +39,8 @@
       es: 'Detalle ampliado del peldaño, el pavimento y el zócalo del pilar.',
       ca: 'Detall ampliat del graó, el paviment i el sòcol del pilar.',
       fr: 'Gros plan sur la marche, le revêtement du sol et la base du pilier.',
-      en: 'Close-up of the step, paving and base of the pillar.'
+      en: 'Close-up of the step, paving and base of the pillar.',
+      de: 'Nahaufnahme von Stufe, Bodenbelag und Pfeilersockel.'
     };
     const detailAlt = detailDescriptions[document.documentElement.lang] ?? detailDescriptions.es;
     for (const miniature of root.querySelectorAll('[data-mini]')) {

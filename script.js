@@ -19,7 +19,8 @@
     es: ["Abrir menú", "Cerrar menú"],
     ca: ["Obre el menú", "Tanca el menú"],
     fr: ["Ouvrir le menu", "Fermer le menu"],
-    en: ["Open menu", "Close menu"]
+    en: ["Open menu", "Close menu"],
+    de: ["Menü öffnen", "Menü schließen"]
   };
   const labels = menuLabels[document.documentElement.lang] ?? menuLabels.es;
   function setMenu(open) {
@@ -187,6 +188,20 @@
         heading: "How the water drains",
         copy: "We check where rainwater runs off the terrace. Here, the slope takes the water to a drain grate set flush with the paving."
       }
+    },
+    de: {
+      window: {
+        heading: "Der Anschluss am Fenster",
+        copy: "Wir prüfen die Fuge zwischen Rahmen und Wand sowie die Fensterbank darunter. Sie hilft, Regenwasser von der Fassade wegzuleiten."
+      },
+      base: {
+        heading: "Der Sockel der Fassade",
+        copy: "Der Sockel liegt nah am Boden und ist Spritzwasser ausgesetzt. Wir klären zuerst, woher die Feuchtigkeit kommt, und entscheiden dann, wie wir die Wand instand setzen."
+      },
+      drain: {
+        heading: "Wie das Wasser abfließt",
+        copy: "Wir prüfen, wohin das Regenwasser auf der Terrasse abfließt. Hier leitet das Gefälle das Wasser zu einem Ablaufgitter auf Höhe des Belags."
+      }
     }
   };
   const details = localized[document.documentElement.lang] ?? localized.es;
@@ -248,6 +263,13 @@
       at: " in ",
       coverage: place => `do you take on jobs in ${place}?`,
       unspecified: "I’d like to check if you work in my area."
+    },
+    de: {
+      greeting: "Hallo Manolo, ",
+      about: "ich hätte eine Frage ",
+      at: " in ",
+      coverage: place => `übernehmen Sie auch Arbeiten in ${place}?`,
+      unspecified: "ich würde gern wissen, ob Sie auch in meiner Gemeinde arbeiten."
     }
   };
   const messages = localized[document.documentElement.lang] ?? localized.es;
