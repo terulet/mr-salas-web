@@ -12,6 +12,9 @@
 <meta name="theme-color" content="#1D3B4F"/>
 <!-- DOMINIO PENDIENTE: ahora apunta a GitHub Pages; cuando haya dominio propio, cambiar estas URL, robots.txt y sitemap.xml y crear CNAME -->
 <link rel="canonical" href="https://terulet.github.io/mr-salas-web/"/>
+<link rel="alternate" hreflang="es" href="https://terulet.github.io/mr-salas-web/"/>
+<link rel="alternate" hreflang="ca" href="https://terulet.github.io/mr-salas-web/ca.html"/>
+<link rel="alternate" hreflang="x-default" href="https://terulet.github.io/mr-salas-web/"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
@@ -25,6 +28,7 @@
 <meta property="og:image:alt" content="Manolo Rodríguez con su chaleco de trabajo"/>
 <meta name="twitter:card" content="summary"/>
 <meta property="og:locale" content="es_ES"/>
+<meta property="og:locale:alternate" content="ca_ES"/>
 <meta property="og:site_name" content="Construcciones y Reformas M.R. Salas"/>
 
 <!-- Favicon: arco con MR -->
@@ -41,6 +45,7 @@
 <link rel="stylesheet" href="proceso-obra.css"/>
 <link rel="stylesheet" href="contacto-movil.css"/>
 <link rel="stylesheet" href="zona-de-trabajo.css"/>
+<link rel="stylesheet" href="idiomas.css"/>
 
 <!-- ============ JSON-LD · LocalBusiness ============ -->
 <script type="application/ld+json">
@@ -84,7 +89,16 @@
       <a href="#oficio">Manolo</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <button class="nav__toggle" id="toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" type="button"><span></span><span></span><span></span></button>
+    <div class="nav__tools">
+      <details class="lang-menu">
+        <summary aria-label="Idioma · Español">ES</summary>
+        <ul class="lang-menu__options">
+          <li><a href="index.html" hreflang="es" lang="es" aria-current="page">Español</a></li>
+          <li><a href="ca.html" hreflang="ca" lang="ca">Català</a></li>
+        </ul>
+      </details>
+      <button class="nav__toggle" id="toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" type="button"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -393,7 +407,7 @@
           <button type="button" class="contact-button contact-button-more" data-compose hidden aria-controls="salas-draft" aria-expanded="false">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> Preparar WhatsApp
           </button>
-          <noscript><a href="https://wa.me/34615959391" class="contact-button contact-button-more" target="_blank" rel="noopener">WhatsApp</a></noscript>
+          <noscript><a href="https://wa.me/34615959391?text=Hola%20Manolo.%20Quer%C3%ADa%20consultarte%20sobre%20una%20obra." class="contact-button contact-button-more" target="_blank" rel="noopener">WhatsApp</a></noscript>
         </div>
 
         <div class="contact-draft" id="salas-draft" hidden>
@@ -424,7 +438,7 @@
 </main>
 <nav class="mobile-contact" aria-label="Contacto rápido con Manolo" hidden>
   <a href="tel:+34615959391" aria-label="Llamar a Manolo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> Llamar</a>
-  <a href="https://wa.me/34615959391" aria-label="Abrir WhatsApp para escribir a Manolo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> WhatsApp</a>
+  <a href="https://wa.me/34615959391?text=Hola%20Manolo.%20Quer%C3%ADa%20consultarte%20sobre%20una%20obra." aria-label="Abrir WhatsApp para escribir a Manolo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> WhatsApp</a>
 </nav>
 <footer class="footer">
   <div class="container footer__inner">
@@ -436,9 +450,9 @@
     </nav>
   </div>
 </footer>
-<script src="script.js?v=20261121-maqueta-completa" defer></script>
+<script src="script.js?v=20261121-idiomas" defer></script>
 <script src="portada-cine.js" defer></script>
-<script src="visor-obra.js" defer></script>
+<script src="visor-obra.js?v=20261121-idiomas" defer></script>
 <script src="contacto-movil.js" defer></script>
 </body>
 </html>

@@ -6,12 +6,20 @@
     const title = root.querySelector('.work-caption h3');
     const description = root.querySelector('.work-caption p');
     const sweep = root.querySelector('.work-sweep');
-    const stages = {
+    const catalan = document.documentElement.lang === 'ca';
+    const stages = catalan ? {
+      before: ['El porxo abans de la reforma', 'El paviment exterior estava deteriorat i l’arrebossat s’havia desprès en diversos punts.'],
+      after: [title.textContent, description.textContent],
+      detail: ['Acabat del paviment a l’entrada', 'L’ampliació mostra la unió entre el terra del porxo, el graó i el sòcol del pilar.']
+    } : {
       before: ['El porche antes de la reforma', 'El pavimento exterior estaba deteriorado y el revoco se había desprendido en varios puntos.'],
       after: [title.textContent, description.textContent],
       detail: ['Remate del pavimento en la entrada', 'La ampliación muestra el encuentro entre el suelo del porche, el peldaño y el zócalo del pilar.']
     };
     const fullAlt = after.alt;
+    const detailAlt = catalan
+      ? 'Detall ampliat del graó, el paviment i el sòcol del pilar.'
+      : 'Detalle ampliado del peldaño, el pavimento y el zócalo del pilar.';
     for (const miniature of root.querySelectorAll('[data-mini]')) {
       miniature.src = miniature.dataset.mini === 'before' ? before.src : after.src;
     }
@@ -22,7 +30,7 @@
       root.dataset.phase = phase;
       before.setAttribute('aria-hidden', String(phase !== 'before'));
       after.setAttribute('aria-hidden', String(phase === 'before'));
-      after.alt = phase === 'detail' ? 'Detalle ampliado del peldaño, el pavimento y el zócalo del pilar.' : fullAlt;
+      after.alt = phase === 'detail' ? detailAlt : fullAlt;
       for (const item of buttons) item.setAttribute('aria-pressed', String(item === button));
       [title.textContent, description.textContent] = stages[phase];
       if (phase !== 'detail') {

@@ -14,14 +14,42 @@
   /* ---------- Menú móvil ---------- */
   var toggle = document.getElementById("toggle");
   var menu = document.getElementById("menu");
+  var languages = nav.querySelector(".lang-menu");
+  var catalan = document.documentElement.lang === "ca";
   function setMenu(open) {
     menu.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    const labels = catalan ? ["Obre el menú", "Tanca el menú"] : ["Abrir menú", "Cerrar menú"];
+    toggle.setAttribute("aria-label", labels[Number(open)]);
   }
-  toggle.addEventListener("click", function () { setMenu(!menu.classList.contains("is-open")); });
+  toggle.addEventListener("click", function () {
+    languages.open = false;
+    setMenu(!menu.classList.contains("is-open"));
+  });
+  const languageLinks = [...languages.querySelectorAll("a[hreflang]")];
+  function keepSection() {
+    for (const link of languageLinks) link.hash = location.hash;
+  }
+  languages.addEventListener("toggle", function () {
+    if (languages.open) {
+      setMenu(false);
+      keepSection();
+    }
+  });
+  window.addEventListener("hashchange", keepSection);
+  keepSection();
+  document.addEventListener("click", function (event) {
+    if (!languages.contains(event.target)) languages.open = false;
+  });
   menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    if (languages.open) {
+      languages.open = false;
+      if (languages.contains(document.activeElement)) languages.querySelector("summary").focus();
+    }
+    setMenu(false);
+  });
 
 })();
 
@@ -98,7 +126,20 @@
 
 (() => {
   const section = document.getElementById("lo-que-no-se-ve");
-  const details = {
+  const details = document.documentElement.lang === "ca" ? {
+    window: {
+      heading: "La junta de la finestra",
+      copy: "Revisem la junta entre el marc i la paret i el trencaaigües de sota. Aquest acabat ajuda a fer que l’aigua de la pluja caigui enfora, lluny de la façana."
+    },
+    base: {
+      heading: "El sòcol de la façana",
+      copy: "La part baixa rep esquitxades i és a prop del terreny. Mirem d’on ve la humitat abans de decidir com reparar i rematar el mur."
+    },
+    drain: {
+      heading: "La sortida de l’aigua",
+      copy: "Comprovem cap on s’escola l’aigua de la pluja des de la terrassa. En aquest exemple, el pendent la porta fins a una reixeta arran de terra."
+    }
+  } : {
     window: {
       heading: "El encuentro con la ventana",
       copy: "Revisamos la junta entre el marco y la pared y el vierteaguas de debajo. Ese remate ayuda a que la lluvia caiga hacia fuera y se separe de la fachada."
@@ -142,15 +183,28 @@
   const whatsapp = draft.querySelector("[data-whatsapp]");
   const destination = new URL(whatsapp.href);
 
+  const messages = document.documentElement.lang === "ca" ? {
+    greeting: "Hola, Manolo. ",
+    about: "Voldria fer-te una consulta sobre ",
+    at: " a ",
+    coverage: place => `Treballeu a ${place}?`,
+    unspecified: "Voldria confirmar si treballeu al meu municipi."
+  } : {
+    greeting: "Hola Manolo. ",
+    about: "Quería consultarte sobre ",
+    at: " en ",
+    coverage: place => `¿Trabajáis en ${place}?`,
+    unspecified: "Quería confirmar si trabajáis en mi municipio."
+  };
+
   function updateMessage() {
     const municipality = town.value.trim();
-    const place = municipality ? " en " + municipality : "";
-    const coverage = municipality
-      ? "¿Trabajáis en " + municipality + "?"
-      : "Quería confirmar si trabajáis en mi municipio.";
-    const text = job.value === "municipio"
-      ? "Hola Manolo. " + coverage
-      : "Hola Manolo. Quería consultarte sobre " + job.selectedOptions[0].dataset.message + place + ".";
+    const place = municipality ? messages.at + municipality : "";
+    const topic = job.selectedOptions[0].dataset.message;
+    const content = job.value === "municipio"
+      ? (municipality ? messages.coverage(municipality) : messages.unspecified)
+      : messages.about + topic + place + ".";
+    const text = messages.greeting + content;
     preview.textContent = text;
     destination.searchParams.set("text", text);
     whatsapp.href = destination.href;
