@@ -1,0 +1,186 @@
+#salas-obra-visor {
+    --cal: #f8f1e7;
+    --night: #142638;
+    --blue: #21394c;
+    --ivory: #fff9ef;
+    --sand: #efd3a7;
+    --pale: #d7e1e9;
+    --line: #ffffff27;
+    --serif: 'Young Serif', Georgia, serif;
+    --sans: 'Figtree', system-ui, sans-serif;
+    background: var(--cal);
+    font: 400 16px/1.5 var(--sans);
+    color: var(--night);
+    color-scheme: light;
+    container-type: inline-size;
+  }
+  #salas-obra-visor * { box-sizing: border-box; }
+  #salas-obra-visor :where(h2, h3, p, figure) { margin: 0; }
+  #salas-obra-visor :focus-visible { outline: 2px solid var(--sand); outline-offset: 4px; }
+  #salas-obra-visor .last-era {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px clamp(17px, 4cqw, 46px);
+  }
+  #salas-obra-visor .last-era small { display: block; color: #665645; font-size: 12px; font-weight: 650; }
+  #salas-obra-visor .last-era strong { font: 400 25px/1.2 var(--serif); }
+  #salas-obra-visor .last-era img { display: block; width: 104px; height: 58px; object-fit: cover; border-radius: 3px; }
+
+  #salas-obra-visor .work-showcase {
+    padding: clamp(23px, 4.1cqw, 50px) clamp(17px, 4cqw, 46px) clamp(24px, 3.8cqw, 42px);
+    color: var(--ivory);
+    border-top: 2px solid #ac8257;
+    background: radial-gradient(ellipse at 100% 2%, #25485e 0%, transparent 57%), var(--night);
+  }
+  #salas-obra-visor .work-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: clamp(19px, 2.5cqw, 28px);
+    border-bottom: 1px solid var(--line);
+  }
+  #salas-obra-visor .work-category { color: var(--sand); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; }
+  #salas-obra-visor h2 {
+    color: var(--ivory);
+    font: 400 clamp(28px, 5.1cqw, 58px)/1.06 var(--serif);
+    letter-spacing: -.035em;
+    margin-top: 8px;
+  }
+  #salas-obra-visor .work-team {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    flex: 0 0 auto;
+    padding-left: 15px;
+    border-left: 1px solid #efd3a776;
+    color: var(--pale);
+    font-size: 13px;
+    line-height: 1.25;
+  }
+  #salas-obra-visor .work-team strong { font: 400 38px/.95 var(--serif); color: var(--sand); }
+  #salas-obra-visor .work-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(174px, 24%);
+    grid-template-areas: 'photo controls' 'caption controls';
+    column-gap: clamp(14px, 2.65cqw, 29px);
+    row-gap: 0;
+    margin-top: clamp(16px, 2.3cqw, 26px);
+  }
+  #salas-obra-visor .work-frame {
+    grid-area: photo;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    aspect-ratio: 3 / 2;
+    border-radius: 4px;
+    background: #0e1c29;
+  }
+  #salas-obra-visor .work-scene {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    transition: opacity 430ms ease, transform 680ms cubic-bezier(.2,.72,.22,1);
+  }
+  #salas-obra-visor .work-scene[data-image='before'] { z-index: 1; opacity: 0; }
+  #salas-obra-visor[data-phase='before'] .work-scene[data-image='before'] { opacity: 1; }
+  #salas-obra-visor .work-scene[data-image='after'] { transform-origin: 63% 88%; }
+  #salas-obra-visor[data-phase='detail'] .work-scene[data-image='after'] { transform: scale(2.55); }
+  #salas-obra-visor .frame-angle {
+    z-index: 2;
+    pointer-events: none;
+    position: absolute;
+    inset: 12px;
+    background:
+      linear-gradient(var(--ivory), var(--ivory)) left top / 17px 1px no-repeat,
+      linear-gradient(var(--ivory), var(--ivory)) left top / 1px 17px no-repeat,
+      linear-gradient(var(--ivory), var(--ivory)) right bottom / 17px 1px no-repeat,
+      linear-gradient(var(--ivory), var(--ivory)) right bottom / 1px 17px no-repeat;
+    opacity: .9;
+  }
+  #salas-obra-visor .detail-outline {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    left: 38.3%;
+    top: 54%;
+    width: 38.8%;
+    height: 39%;
+    opacity: 0;
+    background:
+      linear-gradient(var(--ivory), var(--ivory)) left top / 15px 2px no-repeat,
+      linear-gradient(var(--ivory), var(--ivory)) left top / 2px 15px no-repeat,
+      linear-gradient(var(--ivory), var(--ivory)) right bottom / 15px 2px no-repeat,
+      linear-gradient(var(--ivory), var(--ivory)) right bottom / 2px 15px no-repeat;
+    transition: opacity 240ms ease;
+  }
+  #salas-obra-visor[data-phase='after'] .detail-outline { opacity: 1; }
+  #salas-obra-visor .work-sweep {
+    pointer-events: none;
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    opacity: 0;
+    background: linear-gradient(105deg, transparent 46%, #fff1cd5e 50%, transparent 54%);
+  }
+  #salas-obra-visor .work-sweep.is-running { animation: salas-work-sweep 550ms ease-out both; }
+  @keyframes salas-work-sweep {
+    0% { transform: translateX(-55%); opacity: 0; }
+    35% { opacity: .72; }
+    100% { transform: translateX(55%); opacity: 0; }
+  }
+
+  #salas-obra-visor .work-steps {
+    grid-area: controls;
+    display: grid;
+    align-content: start;
+    gap: 8px;
+  }
+  #salas-obra-visor .work-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(45px, 37%) 1fr;
+    align-items: center;
+    gap: 10px;
+    color: var(--ivory);
+    background: #ffffff08;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 8px;
+    min-height: 65px;
+    text-align: left;
+    font: 650 clamp(12px, 1.6cqw, 16px)/1.2 var(--sans);
+  }
+  #salas-obra-visor .work-step[aria-pressed='true'] {
+    border-color: var(--sand);
+    background: #efd3a715;
+  }
+  #salas-obra-visor .work-step:hover { background: #ffffff16; }
+  #salas-obra-visor .work-mini { display: block; overflow: hidden; border-radius: 2px; aspect-ratio: 3 / 2; background: var(--blue); }
+  #salas-obra-visor .work-mini img { display: block; width: 100%; height: 100%; }
+  #salas-obra-visor [data-pick='detail'] .work-mini img { transform-origin: 63% 88%; transform: scale(2.55); }
+  #salas-obra-visor .work-caption { grid-area: caption; min-height: 78px; padding: 15px 0 0; }
+  #salas-obra-visor .work-caption h3 { color: var(--ivory); font: 400 clamp(17px, 2.35cqw, 27px)/1.2 var(--serif); }
+  #salas-obra-visor .work-caption p { color: var(--pale); margin-top: 6px; font-size: 14px; }
+  #salas-obra-visor .work-note { color: var(--pale); font-size: 12px; margin-top: 3px; }
+
+  @container (max-width: 640px) {
+    #salas-obra-visor .work-header { align-items: flex-start; flex-wrap: wrap; gap: 13px; }
+    #salas-obra-visor .work-team { padding-left: 9px; gap: 8px; }
+    #salas-obra-visor .work-team strong { font-size: 27px; }
+    #salas-obra-visor .work-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'photo' 'controls' 'caption'; gap: 10px; }
+    #salas-obra-visor .work-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+    #salas-obra-visor .work-note { grid-column: 1 / -1; }
+    #salas-obra-visor .work-step { grid-template-columns: minmax(0, 1fr); padding: 5px; gap: 6px; min-height: 44px; text-align: center; }
+    #salas-obra-visor .work-caption { min-height: 0; padding-top: 4px; }
+    #salas-obra-visor .last-era img { width: 77px; height: 48px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #salas-obra-visor .work-scene, #salas-obra-visor .detail-outline { transition: none; }
+    #salas-obra-visor .work-sweep.is-running { animation: none; }
+  }
+#salas-obra-visor .work-header, #salas-obra-visor .work-grid { max-width: 68rem; margin-inline: auto; }

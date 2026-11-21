@@ -36,6 +36,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet"/>
 
 <link rel="stylesheet" href="style.css?v=20261119-remates"/>
+<link rel="stylesheet" href="portada-cine.css"/>
+<link rel="stylesheet" href="visor-obra.css"/>
+<link rel="stylesheet" href="proceso-obra.css"/>
+<link rel="stylesheet" href="contacto-movil.css"/>
+<link rel="stylesheet" href="zona-de-trabajo.css"/>
 
 <!-- ============ JSON-LD · LocalBusiness ============ -->
 <script type="application/ld+json">
@@ -84,18 +89,32 @@
 </header>
 
 <main id="contenido">
-  <section class="hero container" id="inicio">
-    <div class="hero__art">
-      <figure class="hero__portrait">
-        <img src="images/retrato-mediterraneo.webp" width="1024" height="1536" alt="Retrato de Manolo Rodríguez con su chaleco de trabajo, en una composición de ambiente mediterráneo" fetchpriority="high"/>
-      </figure>
-    </div>
-    <div class="hero__copy">
-      <p class="hero__place"><span>Roses · Alt Empordà</span></p>
-      <h1>Obra bien hecha,<br/> con la palabra de siempre.</h1>
-      <p class="hero__experience">Más de 50 años de oficio</p>
-      <a href="tel:+34615959391" class="action action--main hero__call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> Llamar a Manolo</a>
-    </div>
+  <section class="salas-hero-root" id="inicio" aria-labelledby="salas-cine-title">
+  <div class="salas-cover">
+    <figure class="salas-background">
+      <img fetchpriority="high" src="images/reformas/portada-oficio.webp" width="1672" height="941" alt="Una casa de piedra en rehabilitación, con un trabajador en la terraza y el Mediterráneo iluminado al fondo.">
+      <figcaption class="salas-image-caption">Recreación ilustrativa</figcaption>
+    </figure>
+
+    <section class="salas-main" aria-labelledby="salas-cine-title">
+      <div class="salas-copy">
+        <p class="salas-place">Roses · Alt Empordà</p>
+        <h1 id="salas-cine-title">Obra bien <span>hecha.</span></h1>
+        <p class="salas-motto">Con la palabra de siempre.</p>
+        <div class="salas-actions">
+          <a class="salas-action" href="tel:+34615959391"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Llamar a Manolo</a>
+          <a class="salas-action" href="#como" data-enter-history>Ver reformas <span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+      <aside class="salas-person" aria-labelledby="salas-cine-person">
+        <figure class="salas-portrait"><img src="images/retrato-mediterraneo.webp" width="1024" height="1536" alt="Manolo con su chaleco gris de trabajo."></figure>
+        <div>
+          <h2 id="salas-cine-person">Manolo Rodríguez</h2>
+          <p>Más de 50 años de oficio</p>
+        </div>
+      </aside>
+    </section>
+  </div>
   </section>
 
   <section class="reform-history" id="como" aria-labelledby="history-title">
@@ -109,6 +128,27 @@
           <a href="#oficio">Conoce a Manolo</a>
         </nav>
       </div>
+      <section class="salas-eras" id="salas-cine-eras" aria-label="Cuatro épocas de obra y reforma" hidden>
+        <nav class="salas-era-grid" aria-label="Épocas del recorrido">
+          <a class="salas-era" href="#era-1980">
+            <img src="images/reformas/1980-despues.webp" alt="Casa de una planta rehabilitada en una recreación de foto de carrete." width="1152" height="768" loading="lazy" decoding="async">
+            <span class="salas-era-title">Años 80 <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="salas-era" href="#era-1990">
+            <img src="images/reformas/1990-despues.webp" alt="Casa rehabilitada con un coche de los noventa junto a la entrada." width="1152" height="768" loading="lazy" decoding="async">
+            <span class="salas-era-title">Años 90 <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="salas-era" href="#era-2000">
+            <img src="images/reformas/2000-despues.webp" alt="Porche terminado con leña y juguetes en el exterior." width="1152" height="768" loading="lazy" decoding="async">
+            <span class="salas-era-title">Años 2000 <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="salas-era" href="#era-2026">
+            <img src="images/reformas/2026-despues.webp" alt="Villa terminada con terraza de piedra y el mar al fondo." width="1152" height="768" loading="lazy" decoding="async">
+            <span class="salas-era-title">2026 <span aria-hidden="true">→</span></span>
+          </a>
+        </nav>
+        <p class="salas-era-caption">Recreaciones ilustrativas de obra y reforma.</p>
+      </section>
       <nav class="era-nav" aria-label="Épocas del recorrido">
         <a href="#era-1980" aria-current="location">Años 80</a>
         <a href="#era-1990">Años 90</a>
@@ -185,6 +225,45 @@
     </div>
   </section>
 
+  <div id="salas-obra-visor" data-phase="after">
+    <section class="work-showcase" aria-labelledby="salas-work-title">
+        <header class="work-header">
+          <div>
+            <p class="work-category">Ejemplo de obra</p>
+            <h2 id="salas-work-title">Rehabilitación de un porche</h2>
+          </div>
+          <p class="work-team"><strong>8</strong> <span>trabajadores<br> a cargo de Manolo</span></p>
+        </header>
+
+        <div class="work-grid">
+          <figure class="work-frame" id="salas-work-photo" aria-label="Visor de la rehabilitación">
+            <img class="work-scene" loading="lazy" decoding="async" data-image="after" src="images/reformas/2000-despues.webp" alt="Porche renovado con pavimento continuo, pilares reparados y acceso a la vivienda." width="1152" height="768" aria-hidden="false">
+            <img class="work-scene" loading="lazy" decoding="async" data-image="before" src="images/reformas/2000-antes.webp" alt="Porche con el pavimento deteriorado y zonas de revoco desprendidas." width="1152" height="768" aria-hidden="true">
+            <span class="frame-angle" aria-hidden="true"></span>
+            <span class="detail-outline" aria-hidden="true"></span>
+            <span class="work-sweep" aria-hidden="true"></span>
+          </figure>
+
+          <div class="work-steps" role="group" aria-label="Fases de la obra">
+            <button type="button" class="work-step cursor-interaction" data-pick="before" aria-controls="salas-work-photo" aria-pressed="false">
+              <span class="work-mini"><img data-mini="before" alt="" width="1152" height="768"></span><span>Antes</span>
+            </button>
+            <button type="button" class="work-step cursor-interaction" data-pick="after" aria-controls="salas-work-photo" aria-pressed="true">
+              <span class="work-mini"><img data-mini="after" alt="" width="1152" height="768"></span><span>Después</span>
+            </button>
+            <button type="button" class="work-step cursor-interaction" data-pick="detail" aria-controls="salas-work-photo" aria-pressed="false">
+              <span class="work-mini"><img data-mini="after" alt="" width="1152" height="768"></span><span>Detalle</span>
+            </button>
+            <p class="work-note">Ejemplo de rehabilitación con imágenes ilustrativas.</p>
+          </div>
+          <div class="work-caption" aria-live="polite" aria-atomic="true">
+            <h3>Pavimento y porche renovados</h3>
+            <p>La foto amplia muestra el acceso, el porche y el pavimento exterior ya terminados.</p>
+          </div>
+        </div>
+      </section>
+  </div>
+
   <section class="craft page-section container" id="lo-que-no-se-ve" aria-labelledby="craft-title">
     <h2 id="craft-title">Lo que no se ve en una reforma</h2>
     <p class="craft-intro">En una fachada con humedad, estos tres puntos ayudan a entender por dónde entra el agua y cómo sale.</p>
@@ -228,6 +307,33 @@
     </div>
   </section>
 
+  <section class="work-process" id="como-trabajamos" aria-labelledby="process-title">
+    <div class="container">
+      <header class="work-process__heading">
+        <h2 id="process-title">De la primera visita al último repaso</h2>
+        <p>Hablas directamente con Manolo, que coordina a los <strong>8 trabajadores</strong> que tiene a su cargo.</p>
+      </header>
+      <ol class="work-process__steps">
+        <li class="work-process__step">
+          <figure class="work-process__image"><img src="images/proceso-obra.webp" alt="Una mano mide el marco de una puerta en una vivienda de piedra." width="2172" height="724" loading="lazy" decoding="async"></figure>
+          <div><h3>Vemos la vivienda</h3><p>Miramos qué necesita la casa y hablamos de lo que quieres cambiar.</p></div>
+        </li>
+        <li class="work-process__step">
+          <figure class="work-process__image"><img src="images/proceso-obra.webp" alt="Un croquis y unas muestras de material sobre una mesa de trabajo." width="2172" height="724" loading="lazy" decoding="async"></figure>
+          <div><h3>Acordamos el trabajo</h3><p>Concretamos qué hay que hacer y en qué orden.</p></div>
+        </li>
+        <li class="work-process__step">
+          <figure class="work-process__image"><img src="images/proceso-obra.webp" alt="Una mano comprueba con un nivel el remate de un peldaño de piedra." width="2172" height="724" loading="lazy" decoding="async"></figure>
+          <div><h3>Revisamos los acabados</h3><p>Repasamos contigo los remates de la obra y resolvemos las últimas dudas.</p></div>
+        </li>
+      </ol>
+      <div class="work-process__foot">
+        <p>Escenas ilustrativas.</p>
+        <a href="#contacto">Cuéntale a Manolo qué necesitas <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
   <section class="services page-section container" id="servicios">
     <p class="eyebrow">Trabajos</p>
     <h2>De un arreglo a una reforma entera.</h2>
@@ -246,6 +352,21 @@
     <details><summary>¿Haces trabajos pequeños?</summary><p>Sí. Cuéntame qué necesitas y dónde está la vivienda.</p></details>
     <details><summary>¿Qué te cuento cuando te llame?</summary><p>Dime el municipio, qué quieres reformar o reparar y si es urgente. Si tienes fotos, también puedes enviarlas por WhatsApp.</p></details>
     <details><summary>¿Trabajas fuera de Roses?</summary><p>Trabajo en Roses y el Alt Empordà. Dime dónde está la obra y lo vemos.</p></details>
+  </section>
+
+  <section class="service-area" id="zona-de-trabajo" aria-labelledby="service-area-title">
+    <div class="container service-area__grid">
+      <div class="service-area__copy">
+        <p class="eyebrow">Zona de trabajo</p>
+        <h2 id="service-area-title">Provincia de Girona</h2>
+        <p>Trabajo desde Roses. Dime en qué municipio está la vivienda y te confirmo si puedo desplazarme.</p>
+        <a class="action action--main" href="#contacto" data-service="municipio">Consultar por mi municipio <span aria-hidden="true">→</span></a>
+      </div>
+      <figure class="service-area__map">
+        <img src="images/mapa-provincia-girona.webp" alt="Mapa de toda la provincia de Girona, con su límite resaltado y Roses señalado en la costa." width="1280" height="860" loading="lazy" decoding="async">
+        <figcaption>Mapa adaptado de <a href="https://www.icgc.cat/es/Geoinformacion-y-mapas/Servicio-de-Mapa-Base" target="_blank" rel="noopener">© ICGC</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · <a href="https://openmaptiles.org/" target="_blank" rel="noopener">© OpenMapTiles</a> · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a></figcaption>
+      </figure>
+    </div>
   </section>
 
 <section class="contact container" id="contacto" aria-labelledby="salas-contact-title">
@@ -287,6 +408,7 @@
                 <option value="tejado" data-message="un problema de tejado o goteras">Tejado o goteras</option>
                 <option value="exterior" data-message="un trabajo de piedra o exterior">Piedra o exterior</option>
                 <option value="orientacion" data-message="una obra que todavía estoy valorando">Aún lo estoy valorando</option>
+                <option value="municipio">Consultar zona de trabajo</option>
               </select>
             </label>
             <label>Municipio <input type="text" data-town placeholder="Roses, Empuriabrava…" maxlength="70"></label>
@@ -300,6 +422,10 @@
   </div>
 </section>
 </main>
+<nav class="mobile-contact" aria-label="Contacto rápido con Manolo" hidden>
+  <a href="tel:+34615959391" aria-label="Llamar a Manolo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> Llamar</a>
+  <a href="https://wa.me/34615959391" aria-label="Abrir WhatsApp para escribir a Manolo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> WhatsApp</a>
+</nav>
 <footer class="footer">
   <div class="container footer__inner">
     <div><b>M.R. Salas</b><p>Construcciones y Reformas · Roses</p></div>
@@ -310,6 +436,9 @@
     </nav>
   </div>
 </footer>
-<script src="script.js?v=20261119-remates" defer></script>
+<script src="script.js?v=20261121-maqueta-completa" defer></script>
+<script src="portada-cine.js" defer></script>
+<script src="visor-obra.js" defer></script>
+<script src="contacto-movil.js" defer></script>
 </body>
 </html>

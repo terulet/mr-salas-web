@@ -1,0 +1,34 @@
+  .mobile-contact { display: none; }
+
+  @media (max-width: 740px) {
+    html:has(.mobile-contact:not([hidden])) {
+      scroll-padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+    }
+    .mobile-contact:not([hidden]) {
+      display: inline-flex;
+      position: fixed;
+      right: calc(.75rem + env(safe-area-inset-right, 0px));
+      bottom: calc(.75rem + env(safe-area-inset-bottom, 0px));
+      z-index: 4;
+      border: 1px solid #c6b18d;
+      border-radius: .65rem;
+      background: var(--mar-dk);
+      color: var(--paper);
+      box-shadow: 0 .3rem 1.15rem #10213133;
+    }
+    .mobile-contact a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .38rem;
+      min-height: 44px;
+      padding: .35rem .68rem;
+      color: inherit;
+      font: 700 .86rem/1.2 var(--sans);
+      text-decoration: none;
+      border-radius: inherit;
+    }
+    .mobile-contact a + a { border-left: 1px solid #faf0df38; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .mobile-contact a:hover, .mobile-contact a:active { background: #2a4358; }
+    .mobile-contact svg { width: 15px; height: 15px; flex: none; fill: currentColor; }
+  }

@@ -145,7 +145,12 @@
   function updateMessage() {
     const municipality = town.value.trim();
     const place = municipality ? " en " + municipality : "";
-    const text = "Hola Manolo. Quería consultarte sobre " + job.selectedOptions[0].dataset.message + place + ".";
+    const coverage = municipality
+      ? "¿Trabajáis en " + municipality + "?"
+      : "Quería confirmar si trabajáis en mi municipio.";
+    const text = job.value === "municipio"
+      ? "Hola Manolo. " + coverage
+      : "Hola Manolo. Quería consultarte sobre " + job.selectedOptions[0].dataset.message + place + ".";
     preview.textContent = text;
     destination.searchParams.set("text", text);
     whatsapp.href = destination.href;

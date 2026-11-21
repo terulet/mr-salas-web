@@ -1,0 +1,48 @@
+.work-process { border-block: 1px solid var(--line); padding-block: clamp(2.5rem, 6.3vw, 6rem); }
+  .work-process__heading { max-width: 48rem; }
+  .work-process__heading h2 { font-size: clamp(1.95rem, 5vw, 3.75rem); }
+  .work-process__heading p { margin-top: .85rem; color: var(--muted); }
+  .work-process__heading strong { color: var(--mar); }
+  .work-process__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 2.2rem);
+    list-style: none;
+    margin: clamp(1.5rem, 4vw, 2.7rem) 0 0;
+    padding: 0;
+  }
+  .work-process__step { min-width: 0; padding-top: .75rem; border-top: 1px solid var(--ocre); }
+  .work-process__image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 5 / 4;
+    border-radius: .35rem;
+    background: #d8c3a6;
+  }
+  .work-process__image img {
+    position: absolute;
+    display: block;
+    left: var(--scene-left, 0%);
+    width: 300%;
+    height: auto;
+    max-width: none;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .work-process__step:nth-child(2) { --scene-left: -100%; }
+  .work-process__step:nth-child(3) { --scene-left: -200%; }
+  .work-process__step h3 { margin-top: .85rem; }
+  .work-process__step p { max-width: 33ch; margin-top: .4rem; color: var(--muted); }
+  .work-process__foot { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .4rem 1.5rem; margin-top: 1.25rem; }
+  .work-process__foot p { font-size: .81rem; color: var(--muted); }
+  .work-process__foot a { font-weight: 700; text-underline-offset: .25em; }
+  @media (max-width: 640px) {
+    .work-process__steps { grid-template-columns: minmax(0, 1fr); gap: 1.35rem; }
+    .work-process__step { display: grid; grid-template-columns: minmax(90px, .75fr) minmax(0, 1fr); align-items: center; gap: .85rem; }
+    .work-process__step h3 { margin-top: 0; }
+    .work-process__step p { font-size: .92rem; }
+  }
+  @media (max-width: 355px) {
+    .work-process__step { gap: .65rem; }
+    .work-process__step h3 { font-size: 1.08rem; }
+  }
