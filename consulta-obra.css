@@ -1,0 +1,145 @@
+.brief {
+  padding-block: clamp(2rem, 6vw, 5rem);
+  background: #eee5d7;
+  border-block: 1px solid var(--line);
+}
+.brief__layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.22fr);
+  align-items: stretch;
+  background: #fcf7ed;
+  border: 1px solid #d3c0a8;
+  border-radius: .65rem;
+  overflow: clip;
+}
+.brief__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1.2rem, 3.65vw, 3.4rem);
+  background: #172b3b;
+  color: #fff8eb;
+}
+.brief__intro h2 {
+  max-width: 11ch;
+  font-size: clamp(2rem, 4.15vw, 4rem);
+  line-height: 1.06;
+  overflow-wrap: anywhere;
+}
+.brief__lead {
+  max-width: 31ch;
+  margin-top: 1rem;
+  color: #e2d7c8;
+  line-height: 1.5;
+}
+.brief__person {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  margin-block: clamp(1.15rem, 3vw, 2.2rem) 1.2rem;
+}
+.brief__person strong, .brief__person span { display: block; }
+.brief__person span { color: #e2d7c8; font-size: .88rem; }
+.brief__avatar {
+  width: 5.5rem;
+  height: 5.5rem;
+  flex: none;
+  overflow: hidden;
+  border-radius: .32rem;
+  background: #715e49;
+}
+.brief__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  transform: scale(1.75);
+  transform-origin: 55% 5%;
+}
+.brief__call, .brief__send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  min-height: 48px;
+  max-width: 100%;
+  padding: .68rem 1rem;
+  border-radius: .32rem;
+  background: #efca96;
+  color: #172b3b;
+  font-weight: 740;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.brief__call svg { width: .95rem; height: .95rem; fill: currentColor; }
+.brief__call:hover { background: #ffe2b9; }
+.brief__call--whatsapp { margin-top: .45rem; }
+.brief__form {
+  min-width: 0;
+  padding: clamp(1.05rem, 3.2vw, 3rem);
+}
+.brief__form h3 { font-size: clamp(1.38rem, 2.3vw, 2.18rem); }
+.brief__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  margin-top: 1rem;
+}
+.brief__fields label {
+  min-width: 0;
+  font-size: .9rem;
+  font-weight: 700;
+}
+.brief__fields select, .brief__fields input, .brief__fields textarea {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  margin-top: .28rem;
+  padding: .6rem .65rem;
+  border: 1px solid #a7947c;
+  border-radius: .28rem;
+  background: #fffcf6;
+  color: var(--mar);
+  font: 400 1rem/1.35 var(--sans);
+}
+.brief__details { grid-column: 1 / -1; }
+.brief__fields textarea { resize: vertical; }
+.brief__fields input::placeholder, .brief__fields textarea::placeholder { color: #6c6256; opacity: 1; }
+.brief__preview {
+  padding: .85rem .9rem;
+  margin-top: 1rem;
+  border-left: 3px solid #a97745;
+  border-radius: .25rem;
+  background: #ede4d4;
+}
+.brief__preview h4 { margin: 0; font: 750 .82rem/1.3 var(--sans); }
+#contacto .brief__preview .draft-message {
+  margin: .38rem 0 0;
+  padding: 0;
+  min-height: 0;
+  border: 0;
+  background: transparent;
+  color: #253445;
+  font-size: .95rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.brief__send { margin-top: 1rem; background: #172b3b; color: #fff8eb; }
+.brief__send:hover { background: #294557; }
+.brief__send span { color: #efca96; }
+.brief__note { margin-top: .55rem; color: #554b3d; font-size: .84rem; line-height: 1.45; }
+.brief__note a { text-underline-offset: .16em; }
+.brief :is(a, select, input, textarea):focus-visible { outline: 2px solid #a97745; outline-offset: 2px; }
+
+@media (max-width: 700px) {
+  .brief__layout { grid-template-columns: minmax(0, 1fr); }
+  .brief__intro h2 { max-width: 18ch; }
+  .brief__person { margin-block: .9rem; }
+  .brief__avatar { width: 3.65rem; height: 3.65rem; }
+  .brief__send { width: 100%; }
+}
+@media (max-width: 410px) {
+  .brief__fields { grid-template-columns: minmax(0, 1fr); }
+}

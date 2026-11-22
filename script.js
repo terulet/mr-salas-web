@@ -241,11 +241,10 @@
 
 /* ---------- Contacto por WhatsApp ---------- */
 (() => {
-  const contact = document.getElementById("contacto");
-  const toggle = contact.querySelector("[data-compose]");
   const draft = document.getElementById("salas-draft");
   const job = draft.querySelector("[data-job]");
   const town = draft.querySelector("[data-town]");
+  const details = draft.querySelector("[data-details]");
   const preview = draft.querySelector(".draft-message");
   const whatsapp = draft.querySelector("[data-whatsapp]");
   const destination = new URL(whatsapp.href);
@@ -303,27 +302,22 @@
     const content = job.value === "municipio"
       ? (municipality ? messages.coverage(municipality) : messages.unspecified)
       : messages.about + topic + place + ".";
-    const text = messages.greeting + content;
+    const extra = details.value.trim();
+    const text = messages.greeting + content + (extra ? "\n\n" + extra : "");
     preview.textContent = text;
     destination.searchParams.set("text", text);
     whatsapp.href = destination.href;
   }
 
-  function setDraft(open) {
-    draft.hidden = !open;
-    toggle.setAttribute("aria-expanded", String(open));
-    if (open) updateMessage();
-  }
-
-  toggle.addEventListener("click", () => setDraft(draft.hidden));
   document.querySelectorAll("[data-service]").forEach(link => {
     link.addEventListener("click", () => {
       job.value = link.dataset.service;
-      setDraft(true);
+      updateMessage();
     });
   });
   job.addEventListener("change", updateMessage);
   town.addEventListener("input", updateMessage);
+  details.addEventListener("input", updateMessage);
   updateMessage();
-  toggle.hidden = false;
+  draft.hidden = false;
 })();

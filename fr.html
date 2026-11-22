@@ -80,6 +80,7 @@
 }
 </script>
 <link rel="stylesheet" href="selector-obra.css"/>
+<link rel="stylesheet" href="consulta-obra.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Aller au contenu</a>
@@ -457,36 +458,23 @@
     </div>
   </section>
 
-<section class="contact container" id="contacto" aria-labelledby="salas-contact-title">
-  <div class="salas-contact">
-    <div class="contact-layout">
-      <figure class="contact-house">
-        <img src="images/reformas/2026-despues.webp" loading="lazy" decoding="async" width="1152" height="768" alt="Villa à l’enduit clair, avec une terrasse en pierre et vue sur la mer.">
-        <figcaption>Illustration d’une rénovation</figcaption>
-      </figure>
-      <div class="contact-copy">
-        <p class="contact-label">Contact</p>
-        <h2 id="salas-contact-title">Parlons de vos travaux.</h2>
-        <p class="contact-lead">Dites-moi ce que vous souhaitez faire et où se trouve votre logement.</p>
-
-        <div class="contact-person">
-          <div class="contact-avatar"><img src="images/retrato-mediterraneo.webp" loading="lazy" decoding="async" width="1024" height="1536" alt=""></div>
+<section class="brief" id="contacto" aria-labelledby="salas-contact-title">
+  <div class="container brief__layout">
+    <div class="brief__intro">
+      <h2 id="salas-contact-title">Parlons de vos travaux.</h2>
+      <p class="brief__lead">Dites-moi ce que vous souhaitez faire et où se trouve votre logement.</p>
+      <div class="brief__person">
+          <div class="brief__avatar"><img src="images/manolo-real.webp" loading="lazy" decoding="async" width="830" height="1107" alt=""></div>
           <div><strong>Manolo Rodríguez</strong><span>Roses et l’Alt Empordà</span></div>
         </div>
-
-        <div class="contact-actions">
-          <a href="tel:+34615959391" class="contact-button contact-button-main" aria-label="Appeler Manolo au +34 615 959 391">
+      <a href="tel:+34615959391" class="brief__call" aria-label="Appeler Manolo au +34 615 959 391">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> +34 615 959 391
           </a>
-          <button type="button" class="contact-button contact-button-more" data-compose hidden aria-controls="salas-draft" aria-expanded="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> Préparer un message WhatsApp
-          </button>
-          <noscript><a href="https://wa.me/34615959391?text=Bonjour%20Manolo%2C%20j%E2%80%99aimerais%20vous%20parler%20de%20travaux." class="contact-button contact-button-more" target="_blank" rel="noopener">WhatsApp</a></noscript>
-        </div>
-
-        <div class="contact-draft" id="salas-draft" hidden>
-          <h3>Votre premier message</h3>
-          <div class="draft-fields">
+      <noscript><a href="https://wa.me/34615959391?text=Bonjour%20Manolo%2C%20j%E2%80%99aimerais%20vous%20parler%20de%20travaux." class="brief__call brief__call--whatsapp" target="_blank" rel="noopener">WhatsApp</a></noscript>
+    </div>
+    <div class="brief__form" id="salas-draft" aria-labelledby="brief-form-title" hidden>
+      <h3 id="brief-form-title">Préparez votre demande</h3>
+      <div class="brief__fields">
             <label>Type de travaux
               <select data-job>
                 <option value="reforma" data-message="de la rénovation d’un logement">Rénovation d’un logement</option>
@@ -500,12 +488,16 @@
               </select>
             </label>
             <label>Commune <input type="text" data-town placeholder="Roses, Empuriabrava…" maxlength="70"></label>
-          </div>
-          <p class="draft-message" data-message>Bonjour Manolo, j’aimerais vous parler de la rénovation d’un logement.</p>
-          <p class="draft-note">Vous pourrez ajouter des précisions et des photos dans WhatsApp. <a href="privacidad-fr.html">Confidentialité</a></p>
-          <a href="https://wa.me/34615959391" class="contact-button draft-open" data-whatsapp target="_blank" rel="noopener">Ouvrir WhatsApp</a>
-        </div>
+        <label class="brief__details">Détails des travaux (facultatif)
+          <textarea data-details rows="2" maxlength="280" placeholder="Par exemple, remplacer la baignoire par une douche."></textarea>
+        </label>
       </div>
+      <div class="brief__preview">
+        <h4>Aperçu du message</h4>
+        <p class="draft-message" data-message>Bonjour Manolo, j’aimerais vous parler de la rénovation d’un logement.</p>
+      </div>
+      <a href="https://wa.me/34615959391" class="brief__send" data-whatsapp target="_blank" rel="noopener">Ouvrir WhatsApp<span aria-hidden="true">↗</span></a>
+      <p class="brief__note">Vous pourrez ajouter des précisions et des photos dans WhatsApp. <a href="privacidad-fr.html">Confidentialité</a></p>
     </div>
   </div>
 </section>
@@ -524,7 +516,7 @@
     </nav>
   </div>
 </footer>
-<script src="script.js?v=20261121-neerlandes" defer></script>
+<script src="script.js?v=consulta-obra" defer></script>
 <script src="portada-cine.js" defer></script>
 <script src="visor-obra.js?v=20261121-neerlandes" defer></script>
 <script src="contacto-movil.js" defer></script>
