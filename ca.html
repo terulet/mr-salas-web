@@ -81,6 +81,7 @@
 </script>
 <link rel="stylesheet" href="selector-obra.css"/>
 <link rel="stylesheet" href="consulta-obra.css"/>
+<link rel="stylesheet" href="perfil-manolo.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Salta al contingut</a>
@@ -393,18 +394,23 @@
     </div>
   </section>
 
-  <section class="about" id="oficio" aria-labelledby="manolo-title">
-    <div class="page-section container about__grid">
-      <figure class="about__portrait">
-        <div class="about__photo">
-          <img src="images/retrato-mediterraneo.webp" loading="lazy" decoding="async" width="1024" height="1536" alt="Manolo Rodríguez amb l’armilla de feina i el mar al fons.">
-        </div>
-        <figcaption>Manolo Rodríguez · Paleta a Roses i l’Alt Empordà</figcaption>
+  <section class="manolo-profile" id="oficio" aria-labelledby="manolo-title">
+    <div class="container manolo-profile__grid">
+      <header class="manolo-profile__intro">
+        <p>Paleta a Roses i l’Alt Empordà</p>
+        <h2 id="manolo-title">Manolo Rodríguez</h2>
+      </header>
+      <figure class="manolo-profile__portrait">
+        <img src="images/retrato-mediterraneo.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="En Manolo Rodríguez amb l’armilla de feina i la badia al fons.">
+        <figcaption>Retrat il·lustratiu</figcaption>
       </figure>
-      <div class="about__text">
-        <h2 id="manolo-title">Coneix en Manolo</h2>
-        <p>Fa més de 50 anys que construeix, reforma i repara cases a l’Empordà. A la primera visita veu l’obra amb tu, parleu del que cal fer i decidiu per on començar.</p>
-        <p>Hi parles directament, des de la primera visita fins a l’última repassada.</p>
+      <div class="manolo-profile__body">
+        <p>Construeix, reforma i repara habitatges a l’Empordà. A la primera visita, en Manolo veu l’obra amb tu i t’explica per on començar. Coordina l’equip i és el teu contacte fins a l’última repassada.</p>
+        <dl class="manolo-profile__facts">
+          <div><dt>Anys d’ofici</dt><dd>50+</dd></div>
+          <div><dt>Treballadors a càrrec seu</dt><dd>8</dd></div>
+        </dl>
+        <a class="manolo-profile__link" href="#como-trabajamos">Així treballem <span aria-hidden="true">↘</span></a>
       </div>
     </div>
   </section>

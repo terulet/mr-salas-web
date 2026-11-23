@@ -81,6 +81,7 @@
 </script>
 <link rel="stylesheet" href="selector-obra.css"/>
 <link rel="stylesheet" href="consulta-obra.css"/>
+<link rel="stylesheet" href="perfil-manolo.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Aller au contenu</a>
@@ -393,18 +394,23 @@
     </div>
   </section>
 
-  <section class="about" id="oficio" aria-labelledby="manolo-title">
-    <div class="page-section container about__grid">
-      <figure class="about__portrait">
-        <div class="about__photo">
-          <img src="images/retrato-mediterraneo.webp" loading="lazy" decoding="async" width="1024" height="1536" alt="Manolo Rodríguez en gilet de travail, avec la mer en arrière-plan.">
-        </div>
-        <figcaption>Manolo Rodríguez · Maçon à Roses et dans l’Alt Empordà</figcaption>
+  <section class="manolo-profile" id="oficio" aria-labelledby="manolo-title">
+    <div class="container manolo-profile__grid">
+      <header class="manolo-profile__intro">
+        <p>Maçon à Roses et dans l’Alt Empordà</p>
+        <h2 id="manolo-title">Manolo Rodríguez</h2>
+      </header>
+      <figure class="manolo-profile__portrait">
+        <img src="images/retrato-mediterraneo.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Manolo Rodríguez en gilet de travail, avec la baie en arrière-plan.">
+        <figcaption>Portrait d’illustration</figcaption>
       </figure>
-      <div class="about__text">
-        <h2 id="manolo-title">Rencontrez Manolo</h2>
-        <p>Depuis plus de 50 ans, Manolo construit, rénove et répare des maisons dans l’Empordà. Lors de la première visite, il découvre les lieux avec vous. Vous discutez des travaux à prévoir et décidez par quoi commencer.</p>
-        <p>Vous échangez directement avec lui, de cette première visite à la dernière vérification.</p>
+      <div class="manolo-profile__body">
+        <p>Manolo construit, rénove et répare des logements dans l’Empordà. Lors de la première visite, il voit les lieux avec vous et vous explique par quoi commencer. Il coordonne son équipe et reste votre interlocuteur jusqu’à la dernière vérification.</p>
+        <dl class="manolo-profile__facts">
+          <div><dt>Années de métier</dt><dd>50+</dd></div>
+          <div><dt>Ouvriers sous sa direction</dt><dd>8</dd></div>
+        </dl>
+        <a class="manolo-profile__link" href="#como-trabajamos">Notre façon de travailler <span aria-hidden="true">↘</span></a>
       </div>
     </div>
   </section>

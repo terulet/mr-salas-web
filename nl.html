@@ -81,6 +81,7 @@
 </script>
 <link rel="stylesheet" href="selector-obra.css"/>
 <link rel="stylesheet" href="consulta-obra.css"/>
+<link rel="stylesheet" href="perfil-manolo.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Naar de inhoud</a>
@@ -393,18 +394,23 @@
     </div>
   </section>
 
-  <section class="about" id="oficio" aria-labelledby="manolo-title">
-    <div class="page-section container about__grid">
-      <figure class="about__portrait">
-        <div class="about__photo">
-          <img src="images/retrato-mediterraneo.webp" loading="lazy" decoding="async" width="1024" height="1536" alt="Manolo Rodríguez in zijn werkvest met de zee op de achtergrond.">
-        </div>
-        <figcaption>Manolo Rodríguez · Metselaar in Roses en de Alt Empordà</figcaption>
+  <section class="manolo-profile" id="oficio" aria-labelledby="manolo-title">
+    <div class="container manolo-profile__grid">
+      <header class="manolo-profile__intro">
+        <p>Metselaar in Roses en de Alt Empordà</p>
+        <h2 id="manolo-title">Manolo Rodríguez</h2>
+      </header>
+      <figure class="manolo-profile__portrait">
+        <img src="images/retrato-mediterraneo.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Manolo Rodríguez in zijn werkvest met de baai op de achtergrond.">
+        <figcaption>Illustratief portret</figcaption>
       </figure>
-      <div class="about__text">
-        <h2 id="manolo-title">Maak kennis met Manolo</h2>
-        <p>Manolo bouwt, renoveert en repareert al ruim 50 jaar huizen in de Empordà. Bij het eerste bezoek bekijkt hij samen met u de woning. Samen bespreekt u wat er nodig is en waarmee u het best kunt beginnen.</p>
-        <p>Manolo is uw vaste aanspreekpunt, van dat eerste bezoek tot de laatste controle.</p>
+      <div class="manolo-profile__body">
+        <p>Manolo bouwt, renoveert en repareert woningen in de Empordà. Bij het eerste bezoek bekijkt hij samen met u de woning en legt hij uit waar u het beste mee kunt beginnen. Hij stuurt het team aan en blijft uw aanspreekpunt tot de laatste controle.</p>
+        <dl class="manolo-profile__facts">
+          <div><dt>Jaar vakervaring</dt><dd>50+</dd></div>
+          <div><dt>Vakmensen onder zijn leiding</dt><dd>8</dd></div>
+        </dl>
+        <a class="manolo-profile__link" href="#como-trabajamos">Zo werken we <span aria-hidden="true">↘</span></a>
       </div>
     </div>
   </section>

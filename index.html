@@ -81,6 +81,7 @@
 </script>
 <link rel="stylesheet" href="selector-obra.css"/>
 <link rel="stylesheet" href="consulta-obra.css"/>
+<link rel="stylesheet" href="perfil-manolo.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -393,18 +394,23 @@
     </div>
   </section>
 
-  <section class="about" id="oficio" aria-labelledby="manolo-title">
-    <div class="page-section container about__grid">
-      <figure class="about__portrait">
-        <div class="about__photo">
-          <img src="images/retrato-mediterraneo.webp" loading="lazy" decoding="async" width="1024" height="1536" alt="Manolo Rodríguez con su chaleco de trabajo y el mar al fondo.">
-        </div>
-        <figcaption>Manolo Rodríguez · Albañil en Roses y el Alt Empordà</figcaption>
+  <section class="manolo-profile" id="oficio" aria-labelledby="manolo-title">
+    <div class="container manolo-profile__grid">
+      <header class="manolo-profile__intro">
+        <p>Albañil en Roses y el Alt Empordà</p>
+        <h2 id="manolo-title">Manolo Rodríguez</h2>
+      </header>
+      <figure class="manolo-profile__portrait">
+        <img src="images/retrato-mediterraneo.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Manolo Rodríguez con su chaleco de trabajo y la bahía al fondo.">
+        <figcaption>Retrato ilustrativo</figcaption>
       </figure>
-      <div class="about__text">
-        <h2 id="manolo-title">Conoce a Manolo</h2>
-        <p>Lleva más de 50 años levantando, reformando y reparando casas en el Empordà. La primera visita es para ver la obra contigo, hablar de qué hace falta y decidir por dónde empezar.</p>
-        <p>Tratas directamente con él, desde esa primera visita hasta el último repaso.</p>
+      <div class="manolo-profile__body">
+        <p>Construye, reforma y repara viviendas en el Empordà. En la primera visita, Manolo ve la obra contigo y te explica por dónde empezar. Él coordina al equipo y es tu contacto hasta el último repaso.</p>
+        <dl class="manolo-profile__facts">
+          <div><dt>Años de oficio</dt><dd>50+</dd></div>
+          <div><dt>Trabajadores a su cargo</dt><dd>8</dd></div>
+        </dl>
+        <a class="manolo-profile__link" href="#como-trabajamos">Así trabajamos <span aria-hidden="true">↘</span></a>
       </div>
     </div>
   </section>

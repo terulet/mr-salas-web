@@ -81,6 +81,7 @@
 </script>
 <link rel="stylesheet" href="selector-obra.css"/>
 <link rel="stylesheet" href="consulta-obra.css"/>
+<link rel="stylesheet" href="perfil-manolo.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Zum Inhalt springen</a>
@@ -393,18 +394,23 @@
     </div>
   </section>
 
-  <section class="about" id="oficio" aria-labelledby="manolo-title">
-    <div class="page-section container about__grid">
-      <figure class="about__portrait">
-        <div class="about__photo">
-          <img src="images/retrato-mediterraneo.webp" loading="lazy" decoding="async" width="1024" height="1536" alt="Manolo Rodríguez in seiner Arbeitsweste mit dem Meer im Hintergrund.">
-        </div>
-        <figcaption>Manolo Rodríguez · Maurer in Roses und im Alt Empordà</figcaption>
+  <section class="manolo-profile" id="oficio" aria-labelledby="manolo-title">
+    <div class="container manolo-profile__grid">
+      <header class="manolo-profile__intro">
+        <p>Maurer in Roses und im Alt Empordà</p>
+        <h2 id="manolo-title">Manolo Rodríguez</h2>
+      </header>
+      <figure class="manolo-profile__portrait">
+        <img src="images/retrato-mediterraneo.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Manolo Rodríguez in seiner Arbeitsweste mit der Bucht im Hintergrund.">
+        <figcaption>Illustratives Porträt</figcaption>
       </figure>
-      <div class="about__text">
-        <h2 id="manolo-title">Manolo kennenlernen</h2>
-        <p>Seit über 50 Jahren baut, saniert und repariert Manolo Häuser im Empordà. Beim ersten Termin besichtigt er das Objekt mit Ihnen, bespricht die nötigen Arbeiten und klärt, womit Sie beginnen.</p>
-        <p>Manolo bleibt Ihr Ansprechpartner vom ersten Termin bis zur abschließenden Kontrolle.</p>
+      <div class="manolo-profile__body">
+        <p>Manolo baut, saniert und repariert Wohngebäude im Empordà. Beim ersten Termin besichtigt er das Objekt mit Ihnen und erklärt, womit Sie beginnen können. Er leitet das Team und bleibt bis zur abschließenden Kontrolle Ihr Ansprechpartner.</p>
+        <dl class="manolo-profile__facts">
+          <div><dt>Jahre Berufserfahrung</dt><dd>50+</dd></div>
+          <div><dt>Mitarbeiter unter seiner Leitung</dt><dd>8</dd></div>
+        </dl>
+        <a class="manolo-profile__link" href="#como-trabajamos">So arbeiten wir <span aria-hidden="true">↘</span></a>
       </div>
     </div>
   </section>
