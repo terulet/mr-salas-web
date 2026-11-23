@@ -214,3 +214,12 @@
 
 .salas-hero-root .salas-call-label { display: grid; gap: .12rem; }
 .salas-hero-root .salas-call-label small { font-size: .75rem; font-weight: 600; line-height: 1.15; }
+
+.salas-hero-root .salas-visit-action {
+  padding-inline: 13px;
+  border: 1px solid #fff8ed91;
+  border-radius: 4px;
+  background: #10192273;
+  text-align: center;
+}
+.salas-hero-root .salas-visit-action:hover { background: #101922bc; }
