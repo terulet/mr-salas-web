@@ -1,0 +1,25 @@
+html:has(.floating-contact:not([hidden])) {
+  scroll-padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
+}
+
+.floating-contact {
+  position: fixed;
+  right: calc(clamp(.85rem, 2vw, 1.65rem) + env(safe-area-inset-right, 0px));
+  bottom: calc(3.4rem + env(safe-area-inset-bottom, 0px));
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: 44px;
+  padding: .55rem .95rem;
+  border: 1px solid #149b4a;
+  border-radius: 2rem;
+  color: #0e2819;
+  background: #25d366;
+  box-shadow: 0 .3rem 1.15rem #10213142;
+  font: 700 .9rem/1.2 var(--sans);
+  text-decoration: none;
+}
+
+.floating-contact:hover, .floating-contact:active { background: #56e287; }
+.floating-contact svg { width: 17px; height: 17px; flex: none; fill: currentColor; }

@@ -211,3 +211,6 @@
   @media (prefers-reduced-motion: reduce) {
     .salas-hero-root .salas-depth { display: none; }
   }
+
+.salas-hero-root .salas-call-label { display: grid; gap: .12rem; }
+.salas-hero-root .salas-call-label small { font-size: .75rem; font-weight: 600; line-height: 1.15; }

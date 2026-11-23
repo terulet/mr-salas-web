@@ -48,10 +48,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet"/>
 
 <link rel="stylesheet" href="style.css?v=20261121-recorrido-movil"/>
-<link rel="stylesheet" href="portada-cine.css"/>
+<link rel="stylesheet" href="portada-cine.css?v=horario"/>
 <link rel="stylesheet" href="visor-obra.css"/>
 <link rel="stylesheet" href="proceso-obra.css"/>
-<link rel="stylesheet" href="contacto-movil.css"/>
+<link rel="stylesheet" href="contacto-flotante.css?v=whatsapp"/>
 <link rel="stylesheet" href="zona-de-trabajo.css"/>
 <link rel="stylesheet" href="idiomas.css"/>
 
@@ -79,9 +79,11 @@
   "knowsAbout": ["Maurerarbeiten", "Wohnraumsanierung", "Badsanierung", "Küchenrenovierung", "Fassaden", "Dacharbeiten", "Natursteinmauern", "Kleinere Bauarbeiten"]
 }
 </script>
-<link rel="stylesheet" href="selector-obra.css"/>
-<link rel="stylesheet" href="consulta-obra.css"/>
+<link rel="stylesheet" href="selector-obra.css?v=servicios"/>
+<link rel="stylesheet" href="consulta-obra.css?v=horario"/>
 <link rel="stylesheet" href="perfil-manolo.css"/>
+<link rel="stylesheet" href="obra/style.css?v=pausa-fachada"/>
+<link rel="stylesheet" href="obras-reales.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">Zum Inhalt springen</a>
@@ -131,7 +133,7 @@
         <h1 id="salas-cine-title">Saubere <span>Arbeit.</span></h1>
         <p class="salas-motto">Auf mein Wort ist Verlass.</p>
         <div class="salas-actions">
-          <a class="salas-action" href="tel:+34615959391"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Manolo anrufen</a>
+          <a class="salas-action" href="tel:+34615959391"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span class="salas-call-label">Manolo anrufen<small><time datetime="08:00">08:00</time>–<time datetime="19:00">19:00</time></small></span></a>
           <a class="salas-action" href="#como" data-enter-history>Sanierungen ansehen <span aria-hidden="true">↘</span></a>
         </div>
       </div>
@@ -145,6 +147,145 @@
     </section>
   </div>
   </section>
+
+<!-- ============ CASA MIRADOR ============ -->
+<section class="mr-journey" id="visita" aria-labelledby="story-heading">
+    <div class="story" data-story>
+      <figure class="build-stage">
+        <div class="stage-frame">
+          <canvas class="model" width="1080" height="720" role="img" aria-label="Grundriss und Bauanimation von Casa Mirador auf Basis desselben Modells" data-floor-label="ERDGESCHOSS"></canvas>
+          <img class="facade-reveal" src="obra/assets/mirador-fachada.webp" width="2048" height="1360" alt="" decoding="async">
+          <noscript>
+            <img class="stage-still" src="obra/assets/mirador-fachada.webp" alt="Fassade von Casa Mirador"/>
+          </noscript>
+          <div class="stage-id">CASA MIRADOR <span>Fiktives Projekt</span></div>
+        </div>
+        <figcaption class="stage-caption">
+          <span data-phase-label>Grundriss des Erdgeschosses</span>
+          <span data-phase-detail>Geometrie von Casa Mirador</span>
+        </figcaption>
+        <nav class="stage-nav" aria-label="Bauphasen">
+          <a href="#fase-plano" aria-current="step">Grundriss</a>
+          <a href="#fase-base">Fundament</a>
+          <a href="#fase-estructura">Rohbau</a>
+          <a href="#proyecto">Fassade</a>
+        </nav>
+      </figure>
+
+      <div class="story-copy">
+        <section class="build-chapter build-chapter-plan" id="fase-plano" data-build-stage data-label="Grundriss des Erdgeschosses" data-detail="Geometrie von Casa Mirador" aria-labelledby="story-heading">
+          <div class="build-chapter-copy">
+            <p class="kicker">INTERAKTIVE DEMO</p>
+            <h2 id="story-heading">Vom Plan<br> zum <em>Haus.</em></h2>
+            <p>Scrollen Sie weiter und sehen Sie, wie aus den Linien des Grundrisses von Casa Mirador Fundament, Rohbau und Fassade entstehen.</p>
+            <a class="journey-link" href="#servicios">Rundgang überspringen</a>
+          </div>
+        </section>
+
+        <section class="build-chapter build-chapter-base" id="fase-base" data-build-stage data-label="Fundament" data-detail="Umriss und Auflager" aria-labelledby="base-heading">
+          <div class="build-chapter-copy">
+            <p class="kicker">FUNDAMENT</p>
+            <h3 id="base-heading">Vom Papier<br> zum <em>Baugrund.</em></h3>
+            <p>Der Umriss, die Wände und die Markierungen der Stützen lösen sich vom Papier und nehmen auf dem Grundstück ihren Platz ein.</p>
+          </div>
+        </section>
+
+        <section class="build-chapter build-chapter-build" id="fase-estructura" data-build-stage data-label="Rohbau" data-detail="Stützen, Wände und Decken" aria-labelledby="build-heading">
+          <div class="build-chapter-copy">
+            <p class="kicker">ROHBAU</p>
+            <h3 id="build-heading">Das Haus<br> nimmt <em>Form an.</em></h3>
+            <p>An diesen Stellen wachsen Stützen und Wände. Die Decken verbinden sie, und das Obergeschoss entsteht.</p>
+          </div>
+        </section>
+
+        <section class="build-chapter build-chapter-finish" id="proyecto" data-build-stage data-label="Fertige Fassade" data-detail="Stein, Holz und Glas" aria-labelledby="project-title">
+          <div class="build-chapter-copy">
+            <p class="kicker">FERTIGE FASSADE</p>
+            <h3 id="project-title">Casa<br> <em>Mirador.</em></h3>
+            <p>Kalkstein, dunkle Aluminiumfenster und Eichenlamellen, die im Obergeschoss das Sonnenlicht filtern. Der Gartenweg führt zur Haustür.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="tour" id="interior" data-tour aria-labelledby="tour-0">
+      <div class="tour-stage">
+        <div class="tour-shot-stack" data-shot-stack aria-hidden="true"></div>
+        <div class="tour-shade" aria-hidden="true"></div>
+        <div class="tour-top">
+          <div class="tour-state">
+            <p>CASA MIRADOR · INTERAKTIVE DEMO</p>
+            <span data-tour-location>Garten · Zugang</span>
+          </div>
+          <nav class="tour-nav" aria-label="Stationen des Rundgangs">
+            <a href="#interior" aria-current="location">Garten</a>
+            <a href="#umbral">Eingang</a>
+            <a href="#recibidor">Flur</a>
+            <a href="#salon">Wohnzimmer</a>
+            <a href="#cocina">Küche</a>
+            <a href="#dormitorio">Schlafzimmer</a>
+          </nav>
+        </div>
+        <div class="tour-progress" aria-hidden="true"></div>
+      </div>
+      <div class="tour-chapters">
+        <section class="tour-chapter" data-tour-stop data-location="Garten · Zugang" data-x="51" data-y="59" data-max="2.32" aria-labelledby="tour-0">
+          <img class="tour-shot" src="obra/assets/mirador-fachada.webp" alt="Fertige Casa Mirador vom Gartenweg aus gesehen" decoding="async">
+          <div class="tour-copy">
+            <p class="tour-kicker">Außenbereich</p>
+            <h3 id="tour-0">Auf dem Weg zur Haustür.</h3>
+            <p>Steinplatten führen zwischen den Olivenbäumen zum überdachten Eingang. Der Deckenvorsprung spendet der Tür Schatten.</p>
+          </div>
+        </section>
+
+        <section class="tour-chapter" id="umbral" data-tour-stop data-location="Eingang · Schwelle" data-x="53" data-y="50" data-max="1.57" aria-labelledby="tour-1">
+          <img class="tour-shot" src="obra/assets/mirador-entrada.webp" alt="Angelehnte Eichentür mit Kalksteineinfassung" decoding="async">
+          <div class="tour-copy">
+            <p class="tour-kicker">Eingang</p>
+            <h3 id="tour-1">Über die Schwelle.</h3>
+            <p>Der Stein der Stufen setzt sich in der Türlaibung fort. Die Eichentür öffnet sich zum Eingang mit Steinboden.</p>
+          </div>
+        </section>
+
+        <section class="tour-chapter" id="recibidor" data-tour-stop data-location="Erdgeschoss · Flur" data-x="55" data-y="48" data-max="1.29" aria-labelledby="tour-2">
+          <img class="tour-shot" src="obra/assets/mirador-recibidor.webp" alt="Flur mit Steinboden, Eichenbank und Durchgang zum Wohnbereich" decoding="async">
+          <div class="tour-copy">
+            <p class="tour-kicker">Erdgeschoss</p>
+            <h3 id="tour-2">Ein offener Flur.</h3>
+            <p>Eine Eichenbank nutzt den Platz im Flur. Holzlamellen trennen den Flur vom Wohnzimmer und lassen Licht bis zum Eingang.</p>
+          </div>
+        </section>
+
+        <section class="tour-chapter" id="salon" data-tour-stop data-location="Erdgeschoss · Wohn- und Essbereich" data-x="63" data-y="52" data-max="1.22" aria-labelledby="tour-3">
+          <img class="tour-shot" src="obra/assets/mirador-salon.webp" alt="Wohn- und Essbereich mit großen Fenstern zum Olivengarten" decoding="async">
+          <div class="tour-copy">
+            <p class="tour-kicker">Wohnbereich</p>
+            <h3 id="tour-3">Das Wohnzimmer öffnet sich zum Garten.</h3>
+            <p>Bodentiefe Fenster bringen Licht in den Wohnbereich. Der Essbereich liegt am Garten. Der Steinboden verbindet beide Bereiche.</p>
+          </div>
+        </section>
+
+        <section class="tour-chapter" id="cocina" data-tour-stop data-location="Erdgeschoss · Küche" data-x="54" data-y="52" data-max="1.22" aria-labelledby="tour-4">
+          <img class="tour-shot" src="obra/assets/mirador-cocina.webp" alt="Küche mit einer Steininsel und Eichenschränken" decoding="async">
+          <div class="tour-copy">
+            <p class="tour-kicker">Küche</p>
+            <h3 id="tour-4">Die Insel als Mittelpunkt der Küche.</h3>
+            <p>Die Steininsel bietet Platz zum Vorbereiten. Eichenschränke nehmen die Geräte auf. Eine Lichtleiste beleuchtet die Arbeitsplatte.</p>
+          </div>
+        </section>
+
+        <section class="tour-chapter" id="dormitorio" data-tour-stop data-location="Obergeschoss · Hauptschlafzimmer" data-x="57" data-y="48" data-max="1.19" aria-labelledby="tour-5">
+          <img class="tour-shot" src="obra/assets/mirador-dormitorio.webp" alt="Schlafzimmer mit Eichenlamellen und Blick auf die Landschaft" decoding="async">
+          <div class="tour-copy">
+            <p class="tour-kicker">Obergeschoss</p>
+            <h3 id="tour-5">Licht fällt durch die Lamellen.</h3>
+            <p>Die Eichenlamellen geben den Blick auf die Landschaft frei. Ein Schrank in der Eichenwand lässt rund um das Bett Platz.</p>
+            <a class="tour-link" href="#contacto">Angebot anfragen</a>
+          </div>
+        </section>
+      </div>
+    </section>
+</section>
 
   <section class="service-picker" id="servicios" aria-labelledby="service-picker-title">
     <div class="container">
@@ -165,14 +306,32 @@
         <ul class="service-picker__links">
           <li>
             <a href="#contacto" data-service="reforma">
-              <span><strong>Häuser und Wohnungen sanieren</strong><small>Modernisierung von Häusern, Wohnungen und Ferienimmobilien.</small></span>
-              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+              <strong>Komplettrenovierungen</strong>
+              <small>Renovieren Sie ein Haus, eine Wohnung oder einen Zweitwohnsitz.</small>
             </a>
           </li>
           <li>
-            <a href="#contacto" data-service="bano-cocina">
-              <span><strong>Bäder und Küchen</strong><small>Die Räume renovieren, die Sie täglich am meisten nutzen.</small></span>
-              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+            <a href="#contacto" data-service="bano">
+              <strong>Badsanierung</strong>
+              <small>Ersetzen Sie die Badewanne durch eine Dusche oder sanieren Sie das ganze Bad.</small>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="cocina">
+              <strong>Küchenrenovierung</strong>
+              <small>Modernisieren Sie die Küche und nutzen Sie den Platz besser.</small>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="suelos">
+              <strong>Böden und Fliesen</strong>
+              <small>Erneuern Sie Bodenbeläge, Fliesen oder Oberflächen.</small>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="tabiques">
+              <strong>Trennwände und Raumaufteilung</strong>
+              <small>Teilen Sie einen Raum, öffnen Sie einen Durchgang oder schaffen Sie mehr Platz.</small>
             </a>
           </li>
         </ul>
@@ -185,14 +344,20 @@
         <ul class="service-picker__links">
           <li>
             <a href="#contacto" data-service="fachada">
-              <span><strong>Fassaden und Sanierung</strong><small>Mauern, Außenputz und Oberflächen im Freien instand setzen.</small></span>
-              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+              <strong>Fassadensanierung</strong>
+              <small>Lassen Sie Mauern, Putz und Außenflächen instand setzen.</small>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="terrazas">
+              <strong>Terrassen und Veranden</strong>
+              <small>Erneuern Sie Bodenbeläge, Zugänge und Oberflächen.</small>
             </a>
           </li>
           <li>
             <a href="#contacto" data-service="exterior">
-              <span><strong>Steinarbeiten und Außenbereiche</strong><small>Mauern, Bodenbeläge und Abschlüsse aus Stein.</small></span>
-              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+              <strong>Steinmauern</strong>
+              <small>Lassen Sie Steinmauern und Natursteindetails im Außenbereich reparieren.</small>
             </a>
           </li>
         </ul>
@@ -205,19 +370,105 @@
         <ul class="service-picker__links">
           <li>
             <a href="#contacto" data-service="tejado">
-              <span><strong>Dächer und undichte Stellen</strong><small>Dächer prüfen und die Ursache für eindringendes Wasser finden.</small></span>
-              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+              <strong>Dächer und undichte Stellen</strong>
+              <small>Lassen Sie das Dach prüfen und die Ursache für Wasser am Dach finden.</small>
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" data-service="humedades">
+              <strong>Feuchtigkeit und Wassereintritt</strong>
+              <small>Finden Sie die Eintrittsstelle und prüfen Sie den Schaden.</small>
             </a>
           </li>
           <li>
             <a href="#contacto" data-service="reparacion">
-              <span><strong>Maurerarbeiten und kleinere Bauarbeiten</strong><small>Reparaturen und kleinere Arbeiten, die eine saubere Ausführung verdienen.</small></span>
-              <span class="service-picker__arrow" aria-hidden="true">↗</span>
+              <strong>Maurerarbeiten und kleine Reparaturen</strong>
+              <small>Lassen Sie kleine Schäden beheben und Restarbeiten erledigen.</small>
             </a>
           </li>
         </ul>
       </div>
     </div>
+  </section>
+
+  <section class="real-works page-section" id="obras-reales" aria-labelledby="real-works-title">
+    <svg class="real-works__filters" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+      <filter id="works-tone-1" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="0.9" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.93" offset="0"/><feFuncB type="gamma" amplitude="0.99" exponent="0.96" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-2" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.99" exponent="0.88" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.9" offset="0"/><feFuncB type="gamma" amplitude="1" exponent="0.91" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-3" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.99" exponent="0.91" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.9" offset="0"/><feFuncB type="gamma" amplitude="1" exponent="0.88" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-4" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.99" exponent="0.87" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.88" offset="0"/><feFuncB type="gamma" amplitude="1" exponent="0.87" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-5" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.99" exponent="0.84" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.83" offset="0"/><feFuncB type="gamma" amplitude="1" exponent="0.79" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-6" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.99" exponent="0.88" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.88" offset="0"/><feFuncB type="gamma" amplitude="1" exponent="0.83" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-7" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.99" exponent="0.88" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.88" offset="0"/><feFuncB type="gamma" amplitude="1" exponent="0.85" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-8" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.99" exponent="0.88" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.81" offset="0"/><feFuncB type="gamma" amplitude="0.99" exponent="0.94" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-9" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="0.88" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.9" offset="0"/><feFuncB type="gamma" amplitude="0.99" exponent="0.94" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-10" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.99" exponent="0.84" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.87" offset="0"/><feFuncB type="gamma" amplitude="1" exponent="0.87" offset="0"/></feComponentTransfer></filter>
+      <filter id="works-tone-11" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="gamma" amplitude="0.98" exponent="0.87" offset="0"/><feFuncG type="gamma" amplitude="1" exponent="0.87" offset="0"/><feFuncB type="gamma" amplitude="1" exponent="0.81" offset="0"/></feComponentTransfer></filter>
+    </defs></svg>
+    <div class="container">
+      <header class="real-works__heading">
+        <h2 id="real-works-title">Unsere Referenzen</h2>
+        <p>Wohnhäuser, Fassaden und Innenräume vom Team M.R. Salas.</p>
+      </header>
+      <div class="real-works__grid">
+      <a class="real-works__card real-works__card--feature" href="images/obras-reales/07.webp" data-works-photo aria-label="Foto vergrößern · Pool am Meer">
+        <img src="images/obras-reales/07-mini.webp" width="1040" height="777" alt="Pool am Meer" loading="lazy" decoding="async" style="filter:url(#works-tone-7) saturate(0.96)">
+        <span class="real-works__caption"><span>Pool am Meer</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/04.webp" data-works-photo aria-label="Foto vergrößern · Natursteinfassade">
+        <img src="images/obras-reales/04-mini.webp" width="700" height="523" alt="Natursteinfassade" loading="lazy" decoding="async" style="filter:url(#works-tone-4) saturate(0.98)">
+        <span class="real-works__caption"><span>Natursteinfassade</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/09.webp" data-works-photo aria-label="Foto vergrößern · Wohnzimmer mit Kamin">
+        <img src="images/obras-reales/09-mini.webp" width="700" height="525" alt="Wohnzimmer mit Kamin" loading="lazy" decoding="async" style="filter:url(#works-tone-9) saturate(0.99)">
+        <span class="real-works__caption"><span>Wohnzimmer mit Kamin</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/01.webp" data-works-photo aria-label="Foto vergrößern · Wohnhaus am Meer">
+        <img src="images/obras-reales/01-mini.webp" width="700" height="525" alt="Wohnhaus am Meer" loading="lazy" decoding="async" style="filter:url(#works-tone-1) saturate(1.02)">
+        <span class="real-works__caption"><span>Wohnhaus am Meer</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/02.webp" data-works-photo aria-label="Foto vergrößern · Wohnhaus mit Terrassen">
+        <img src="images/obras-reales/02-mini.webp" width="700" height="525" alt="Wohnhaus mit Terrassen" loading="lazy" decoding="async" style="filter:url(#works-tone-2) saturate(0.95)">
+        <span class="real-works__caption"><span>Wohnhaus mit Terrassen</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/03.webp" data-works-photo aria-label="Foto vergrößern · Fassade mit Balkon">
+        <img src="images/obras-reales/03-mini.webp" width="700" height="525" alt="Fassade mit Balkon" loading="lazy" decoding="async" style="filter:url(#works-tone-3) saturate(0.94)">
+        <span class="real-works__caption"><span>Fassade mit Balkon</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/05.webp" data-works-photo aria-label="Foto vergrößern · Bad mit Badewanne">
+        <img src="images/obras-reales/05-mini.webp" width="650" height="487" alt="Bad mit Badewanne" loading="lazy" decoding="async" style="filter:url(#works-tone-5) saturate(0.94)">
+        <span class="real-works__caption"><span>Bad mit Badewanne</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/06.webp" data-works-photo aria-label="Foto vergrößern · Bad mit Doppelwaschtisch">
+        <img src="images/obras-reales/06-mini.webp" width="650" height="487" alt="Bad mit Doppelwaschtisch" loading="lazy" decoding="async" style="filter:url(#works-tone-6) saturate(0.93)">
+        <span class="real-works__caption"><span>Bad mit Doppelwaschtisch</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/08.webp" data-works-photo aria-label="Foto vergrößern · Bad mit dunklen Möbeln">
+        <img src="images/obras-reales/08-mini.webp" width="700" height="523" alt="Bad mit dunklen Möbeln" loading="lazy" decoding="async" style="filter:url(#works-tone-8) saturate(0.91)">
+        <span class="real-works__caption"><span>Bad mit dunklen Möbeln</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/10.webp" data-works-photo aria-label="Foto vergrößern · Offene Küche">
+        <img src="images/obras-reales/10-mini.webp" width="700" height="525" alt="Offene Küche" loading="lazy" decoding="async" style="filter:url(#works-tone-10) saturate(0.96)">
+        <span class="real-works__caption"><span>Offene Küche</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      <a class="real-works__card" href="images/obras-reales/11.webp" data-works-photo aria-label="Foto vergrößern · Innenraum eines Geschäfts">
+        <img src="images/obras-reales/11-mini.webp" width="525" height="700" alt="Innenraum eines Geschäfts" loading="lazy" decoding="async" style="filter:url(#works-tone-11) saturate(0.94)">
+        <span class="real-works__caption"><span>Innenraum eines Geschäfts</span><span class="real-works__open">Foto vergrößern</span></span>
+      </a>
+      </div>
+    </div>
+    <dialog class="real-works__viewer" data-works-viewer aria-labelledby="real-works-viewer-title">
+      <div class="real-works__viewer-head">
+        <p id="real-works-viewer-title" data-works-title aria-live="polite"></p>
+        <form method="dialog"><button type="submit">Schließen</button></form>
+      </div>
+      <img alt="" data-works-large>
+      <div class="real-works__viewer-nav">
+        <button type="button" data-works-previous>Zurück</button>
+        <span data-works-position></span>
+        <button type="button" data-works-next>Weiter</button>
+      </div>
+    </dialog>
   </section>
 
   <section class="reform-history" id="como" aria-labelledby="history-title">
@@ -473,9 +724,15 @@
           <div class="brief__avatar"><img src="images/manolo-real.webp" loading="lazy" decoding="async" width="830" height="1107" alt=""></div>
           <div><strong>Manolo Rodríguez</strong><span>Roses und Alt Empordà</span></div>
         </div>
-      <a href="tel:+34615959391" class="brief__call" aria-label="Manolo unter +34 615 959 391 anrufen">
+      <a href="tel:+34615959391" class="brief__call" aria-describedby="salas-call-hours" aria-label="Manolo unter +34 615 959 391 anrufen">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> +34 615 959 391
           </a>
+      <p class="brief__call-hours" id="salas-call-hours">Telefonzeiten · <time datetime="08:00">08:00</time>–<time datetime="19:00">19:00</time></p>
+      <div class="brief__email">
+        <strong>E-Mail</strong>
+        <a href="mailto:mrsalas_7@hotmail.com">mrsalas_7@hotmail.com</a>
+        <p>Sie können jederzeit schreiben.</p>
+      </div>
       <noscript><a href="https://wa.me/34615959391?text=Hallo%20Manolo%2C%20ich%20h%C3%A4tte%20eine%20Frage%20zu%20einem%20Bauvorhaben." class="brief__call brief__call--whatsapp" target="_blank" rel="noopener">WhatsApp</a></noscript>
     </div>
     <div class="brief__form" id="salas-draft" aria-labelledby="brief-form-title" hidden>
@@ -483,12 +740,17 @@
       <div class="brief__fields">
             <label>Art der Arbeiten
               <select data-job>
-                <option value="reforma" data-message="zur Renovierung eines Hauses oder einer Wohnung">Haus oder Wohnung renovieren</option>
-                <option value="bano-cocina" data-message="zur Renovierung von Bad oder Küche">Bad oder Küche</option>
-                <option value="reparacion" data-message="zu einer Ausbesserung am Mauerwerk">Maurerarbeiten oder Reparatur</option>
-                <option value="fachada" data-message="zur Sanierung einer Fassade">Fassade</option>
-                <option value="tejado" data-message="zu einem Dachproblem oder einer undichten Stelle">Dach oder undichte Stelle</option>
-                <option value="exterior" data-message="zu Stein- oder Außenarbeiten">Stein- oder Außenarbeiten</option>
+                <option value="reforma" data-message="zur Komplettrenovierung eines Hauses oder einer Wohnung">Komplettrenovierungen</option>
+                <option value="bano" data-message="zur Sanierung eines Badezimmers">Badsanierung</option>
+                <option value="cocina" data-message="zur Renovierung einer Küche">Küchenrenovierung</option>
+                <option value="suelos" data-message="zu neuen Bodenbelägen oder Fliesen">Böden und Fliesen</option>
+                <option value="tabiques" data-message="zur neuen Aufteilung eines Raums">Trennwände und Raumaufteilung</option>
+                <option value="fachada" data-message="zur Sanierung einer Fassade">Fassadensanierung</option>
+                <option value="terrazas" data-message="zur Renovierung einer Terrasse oder Veranda">Terrassen und Veranden</option>
+                <option value="exterior" data-message="zu Arbeiten an einer Steinmauer">Steinmauern</option>
+                <option value="tejado" data-message="zu einem Dachproblem oder einer undichten Stelle">Dächer und undichte Stellen</option>
+                <option value="humedades" data-message="zu einem Problem mit Feuchtigkeit oder eindringendem Wasser">Feuchtigkeit und Wassereintritt</option>
+                <option value="reparacion" data-message="zu einer Ausbesserung am Mauerwerk">Maurerarbeiten und kleine Reparaturen</option>
                 <option value="orientacion" data-message="zu einem möglichen Bauvorhaben">Ich bin noch in der Planung</option>
                 <option value="municipio">Einsatzgebiet erfragen</option>
               </select>
@@ -508,10 +770,7 @@
   </div>
 </section>
 </main>
-<nav class="mobile-contact" aria-label="Schnellkontakt zu Manolo" hidden>
-  <a href="tel:+34615959391" aria-label="Manolo anrufen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> Anrufen</a>
-  <a href="https://wa.me/34615959391?text=Hallo%20Manolo%2C%20ich%20h%C3%A4tte%20eine%20Frage%20zu%20einem%20Bauvorhaben." aria-label="WhatsApp öffnen, um Manolo zu schreiben" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> WhatsApp</a>
-</nav>
+<a class="floating-contact" href="https://wa.me/34615959391?text=Hallo%20Manolo%2C%20ich%20h%C3%A4tte%20eine%20Frage%20zu%20einem%20Bauvorhaben." aria-label="WhatsApp öffnen, um Manolo zu schreiben" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>WhatsApp</span></a>
 <footer class="footer">
   <div class="container footer__inner">
     <div><b>M.R. Salas</b><p>Bau und Sanierung · Roses</p></div>
@@ -522,10 +781,14 @@
     </nav>
   </div>
 </footer>
-<script src="script.js?v=consulta-obra" defer></script>
+<script src="script.js?v=idiomas" defer></script>
 <script src="portada-cine.js" defer></script>
 <script src="visor-obra.js?v=20261121-neerlandes" defer></script>
-<script src="contacto-movil.js" defer></script>
+<script src="contacto-flotante.js?v=desde-portada" defer></script>
 <script src="selector-obra.js" defer></script>
+<script src="obras-reales.js" defer></script>
+<script src="obra/scene.js?v=idiomas" defer></script>
+<script src="obra/journey.js?v=idiomas" defer></script>
+<script src="obra/tour.js" defer></script>
 </body>
 </html>

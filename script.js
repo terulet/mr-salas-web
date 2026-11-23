@@ -34,8 +34,34 @@
     setMenu(!menu.classList.contains("is-open"));
   });
   const languageLinks = [...languages.querySelectorAll("a[hreflang]")];
+  const mainSections = [...document.querySelectorAll("main > [id]")];
+  function visibleSectionHash() {
+    const readingLine = nav.getBoundingClientRect().bottom + 12;
+    const section = mainSections.find(element => {
+      const {top, bottom} = element.getBoundingClientRect();
+      return top <= readingLine && bottom > readingLine;
+    });
+    if (!section) return location.hash;
+    if (section.id === "inicio") return "";
+    if (section.id === "visita") {
+      const tour = section.querySelector("[data-tour]");
+      const active = tour.getBoundingClientRect().top <= readingLine
+        ? tour.querySelector('.tour-nav [aria-current="location"]')
+        : section.querySelector('.stage-nav [aria-current="step"]');
+      if (active?.hash && active.hash !== "#fase-plano") return active.hash;
+    }
+    if (section.id === "como") {
+      const firstEra = section.querySelector(".chapter");
+      if (firstEra?.getBoundingClientRect().top <= readingLine) {
+        const activeEra = section.querySelector('.era-nav [aria-current="location"]');
+        if (activeEra) return activeEra.hash;
+      }
+    }
+    return "#" + section.id;
+  }
   function keepSection() {
-    for (const link of languageLinks) link.hash = location.hash;
+    const hash = location.hash || (languages.open ? visibleSectionHash() : "");
+    for (const link of languageLinks) link.hash = hash;
   }
   languages.addEventListener("toggle", function () {
     if (languages.open) {
@@ -44,6 +70,9 @@
     }
   });
   window.addEventListener("hashchange", keepSection);
+  languages.addEventListener("click", function (event) {
+    if (event.target.closest("a[hreflang]")) keepSection();
+  });
   keepSection();
   document.addEventListener("click", function (event) {
     if (!languages.contains(event.target)) languages.open = false;
