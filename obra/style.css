@@ -137,6 +137,10 @@
 }
 @media (max-width: 760px) {
   .story { display: block; padding-inline: var(--gutter); }
+  /* Hold the finished facade before the full-width approach begins. */
+  .mr-journey:has(.tour[data-ready]) .story-copy {
+    padding-bottom: clamp(80px, 11svh, 104px);
+  }
   .build-stage { top: var(--header); margin: 0 calc(-1 * var(--gutter)); padding: 9px var(--gutter) 5px; background: var(--cal); }
   .stage-frame { aspect-ratio: 1.43; max-height: max(147px,41svh); }
   .stage-caption { font-size: .77rem; padding: 7px 0 6px; }
