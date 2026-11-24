@@ -92,20 +92,6 @@
 }
 .mr-journey img { max-width: 100%; }
 .model { display: block; width: 100%; height: 100%; }
-.stage-id {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 9px;
-  top: 13px;
-  left: 14px;
-  color: #1d3b4f;
-  font-size: .75rem;
-  font-weight: 760;
-  letter-spacing: .055em;
-}
-.stage-id span { color: #4e5d65; font-weight: 500; letter-spacing: 0; }
 .stage-caption {
   display: flex;
   align-items: baseline;
@@ -153,7 +139,6 @@
   .story { display: block; padding-inline: var(--gutter); }
   .build-stage { top: var(--header); margin: 0 calc(-1 * var(--gutter)); padding: 9px var(--gutter) 5px; background: var(--cal); }
   .stage-frame { aspect-ratio: 1.43; max-height: max(147px,41svh); }
-  .stage-id { top: 8px; left: 8px; font-size: .68rem; }
   .stage-caption { font-size: .77rem; padding: 7px 0 6px; }
   .stage-nav a { min-height: 33px; font-size: .75rem; }
   .build-chapter { min-height: 45svh; padding-block: 22px; scroll-margin-top: var(--stage-offset, 255px); }
@@ -170,14 +155,6 @@
 }
 
 .facade-reveal { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:51% 52%; opacity:0; pointer-events:none; }
-.stage-id { z-index:2; }
-.stage-frame[data-photo="true"] .stage-id {
-  color:#fff8eb;
-  padding:6px 9px;
-  border-radius:2px;
-  background:#231e15b8;
-}
-.stage-frame[data-photo="true"] .stage-id span { color:#f5e8d7; }
 .tour {
   --tour-ink:#fbf5e9;
   --tour-muted:#e8dfd0;
@@ -185,6 +162,17 @@
   scroll-margin-top:0;
 }
 .tour-stage { display:none; }
+.facade-bridge {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  z-index: 3;
+  pointer-events: none;
+}
+.facade-bridge-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mr-journey[data-joining] .facade-bridge { display: block; }
+.mr-journey[data-joining] :is(.stage-frame, .tour-stage, .tour-chapters) { visibility: hidden; }
+.mr-journey[data-joining] .tour { background: var(--cal); }
 .tour-chapter { scroll-margin-top:0; }
 .tour-chapter > img { display:block;width:100%;aspect-ratio:1.65;object-fit:cover; }
 .tour-copy { padding:24px var(--gutter) 46px;max-width:720px; }

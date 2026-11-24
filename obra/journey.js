@@ -48,7 +48,6 @@
     lastDisplay = display;
     if(facade){
       facade.style.opacity=String(photo*photo*(3-2*photo));
-      facade.parentElement.dataset.photo=photo>.52?'true':'false';
     }
     navigation.forEach((link,i) => {
       const end = phases[i+1]?.progress ?? 1;
