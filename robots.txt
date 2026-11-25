@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://terulet.github.io/mr-salas-web/sitemap.xml
+Sitemap: https://mrsalas.es/sitemap.xml
